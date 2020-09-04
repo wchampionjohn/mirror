@@ -1,0 +1,17 @@
+<% selectors.each do |name, selector| %>
+<div class="col-md-<%= gird  %>">
+  <div class="m-form__group">
+    <div class="m-form__control">
+      <div class="m-form__control">
+        <%= select_tag(
+        name,
+        options_for_select(selector[:options]),
+        class: 'custom-select form-control',
+        'v-model' => "selector.#{selector[:column]}"
+        )
+        %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

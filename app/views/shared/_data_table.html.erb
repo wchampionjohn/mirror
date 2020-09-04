@@ -1,0 +1,27 @@
+<div class="m_datatable m-datatable m-datatable--default m-datatable--loaded" id="local_data">
+  <table-vue
+    :columns="columns"
+    :enable-edit="enableEdit"
+    :enable-delete="enableDelete"
+    :source-name="sourceName"
+    :sources="sources"
+    :sorting-columns="sortingColumns"
+    :selected-ids="selectedIds"
+    :keyword="keyword"
+    :search-placeholder="searchPlaceholder"
+    :cell-helper-decorators="cellHelperDecorators"
+    :cell-component-decorators="cellComponentDecorators"
+    :cell-component-properties="cellComponentProperties"
+    :table-components="tableComponents"
+    :extra-actions="extraActions"
+    :table-component-properties="tableComponentProperties"
+    :locale="locale"
+    >
+  </table-vue>
+
+  <div class="m-datatable__pager m-datatable--paging-loaded clearfix">
+    <pagination-vue v-bind:pagination="pagination"></pagination-vue>
+    <page-setter-vue v-bind:pagination="pagination"></page-setter-vue>
+  </div>
+
+</div>

@@ -1,0 +1,68 @@
+<div class="m-portlet__head-tools" >
+  <ul class="m-portlet__nav">
+
+  <% if links.present? %>
+    <li class="m-portlet__nav-item">
+      <div class="m-portlet__head-tools col-md-6 m--align-right">
+        <% links.each do |link| %>
+          <%= link_to(link[:path], class: "btn #{link[:btn_class]}  m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill") do %>
+          <i class="<%= link[:icon] %>"></i>
+          <%= link[:content] %>
+          <% end %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+
+  <li class="m-portlet__nav-item">
+    <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
+      <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+        <i class="la la-gear m--font-brand"></i>
+      </a>
+      <div class="m-dropdown__wrapper">
+        <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+        <div class="m-dropdown__inner">
+          <div class="m-dropdown__body">
+            <div class="m-dropdown__content">
+              <ul class="m-nav">
+                <li class="m-nav__section m-nav__section--first">
+                  <span class="m-nav__section-text">
+                    批次設定
+                  </span>
+                </li>
+                <li class="m-nav__item" v-if="selectedIds.length > 0">
+                  <% extra_actions.each do |action| %>
+                  <a class="dropdown-item <%= action[:class] %>"
+                     v-if="<%="enableBatch#{action[:action].capitalize}" %>()"
+                     :href="'<%= action[:path] %>/?ids[]=' + selectedIds.join('&ids[]=')"
+                     data-method="<%= action[:method] %>"
+                     data-confirm-swal="<%= action[:swal] %>">
+                     <i class="<%= action[:icon] %>"></i>
+                     <span class="m-nav__link-text">
+                       <%= action[:name].capitalize %>
+                     </span>
+                  </a>
+                  <% end %>
+                  <a class="dropdown-item"
+                     v-if="enableDelete"
+                     :href="sourceName + '/' + selectedIds[0] + '?ids[]=' + selectedIds.join('&ids[]=')"
+                     data-method="delete"
+                     :data-confirm-swal="`有${selectedIds.length}筆資料將被刪除，確定執行此操作嗎?`">
+                    <i class="m-nav__link-icon la la-trash"></i>
+                    <span class="m-nav__link-text">
+                      刪除全部
+                    </span>
+                  </a>
+                </li>
+                <li class="m-nav__item" v-else>
+                  至少勾選一筆資料
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  </ul>
+</div>

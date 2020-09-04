@@ -1,0 +1,35 @@
+<li class="m-menu__item  m-menu__item--submenu <%= menu['class'] %> <%='m-menu__item--active' if menu['name'] == current_menu_name %>" aria-haspopup="true"  data-menu-submenu-toggle="click" data-redirect="true">
+  <a href="<%= menu['link'] || 'javascript:viod(0)' %>" class="m-menu__link <%= 'm-menu__toggle' if menu['items'].present? %>">
+    <i class="m-menu__link-icon <%= menu['icon'] %>  <%='m-menu__item--active' if menu['name'] == current_menu_name %>">
+      <span class="menu-text">
+        <%= menu['name'] %>
+      </span>
+    </i>
+  </a>
+  <% if menu['items'].present? %>
+  <div class="m-menu__submenu <%= 'm-menu__submenu--up' if index > 3 %>">
+    <span class="m-menu__arrow"></span>
+    <ul class="m-menu__subnav">
+      <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true"  data-redirect="true">
+        <span class="m-menu__link">
+          <span class="m-menu__link-text">
+            <%= menu['name'] %>
+          </span>
+        </span>
+      </li>
+      <% menu.fetch('items',[]).each do |item|%>
+        <% if can? :read, item['resource'].singularize.camelize.constantize %>
+          <li class="m-menu__item <%= 'm-menu__item--active' if item['name'] == current_item_name%>" aria-haspopup="true"  data-redirect="true">
+            <a href="<%= item['link'] %>" class="m-menu__link ">
+              <i class="m-menu__link-icon <%= item['icon'] %>"></i>
+              <span class="m-menu__link-text">
+                <%= item['name'] %>
+              </span>
+            </a>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+</li>

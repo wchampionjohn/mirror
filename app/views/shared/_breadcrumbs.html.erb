@@ -1,0 +1,49 @@
+<button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-light " id="m_aside_header_menu_mobile_close_btn">
+  <i class="la la-close"></i>
+</button>
+<div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-light m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light "  >
+  <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+      <li class="m-nav__item m-nav__item--home pl-4">
+        <a href="#" class="m-nav__link m-nav__link--icon">
+          <i class="m-nav__link-icon la la-home"></i>
+        </a>
+      </li>
+      <li class="m-nav__separator">
+        -
+      </li>
+    <% if File.exists?(Rails.root.join("app", "views", params[:controller], "_breadcrumb_items.html.erb"))  %>
+      <%= render partial: 'breadcrumb_items' %>
+    <% else %>
+      <li class="m-nav__item">
+        <a href="javascript:void(0)" class="m-nav__link">
+          <span class="m-nav__link-text">
+            <%= current_menu_name %>
+          </span>
+        </a>
+      </li>
+      <% if current_item_name.present? %>
+      <li class="m-nav__separator">
+        -
+      </li>
+      <li class="m-nav__item">
+        <a href="<%= current_item_link %>" class="m-nav__link">
+          <span class="m-nav__link-text">
+            <%= current_item_name %>
+          </span>
+        </a>
+      </li>
+      <% end %>
+
+      <% if current_breadcrumb.present? %>
+      -
+      <li class="m-nav__item">
+        <a href="<%= current_breadcrumb['link'] %>" class="m-nav__link">
+          <span class="m-nav__link-text">
+            <%= current_breadcrumb['name'] %>
+          </span>
+        </a>
+      </li>
+      <% end %>
+  <% end %>
+  </ul>
+</div>

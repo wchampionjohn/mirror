@@ -1,0 +1,33 @@
+<div class="m-portlet__head">
+
+  <%= render partial: 'shared/portlet_caption',
+  locals: {
+  title: @index_title || index_title,
+  sub_title: @index_sub_title || index_sub_title,
+  enable_search: enable_search?,
+  hint: filter_hint
+  } %>
+
+
+  <%= render partial: 'shared/portlet_head_tools', locals: {
+  links: index_tools,
+  extra_actions: @batch_extra_action || [] } %>
+</div>
+
+<div class="m-portlet__body">
+<div class="m-form m-form--label-align-right  m--margin-bottom-10">
+  <div class="row align-items-center">
+    <div class="col-xl-12 order-2 order-xl-2">
+      <div class="form-group m-form__group row align-items-center">
+        <%= render partial: 'shared/search_bar', locals: { hint: filter_hint } if enable_search? %>
+        <%= render partial: 'shared/selector', locals: { selectors: selectors, gird: (4 / selectors.keys.size) } if selectors.present? %>
+      </div>
+    </div>
+  </div>
+</div>
+  <% if selectors.present? %>
+  <% else %>
+  <div class="col-md-6"></div>
+  <% end %>
+  <%= render partial: 'shared/data_table' %>
+</div>

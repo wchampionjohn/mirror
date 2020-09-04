@@ -1,0 +1,16 @@
+admin:
+  -
+    name: '場域設置'
+    icon: 'flaticon-settings'
+    class: ''
+    items:
+      -
+        name: '店家管理'
+        icon: 'la la-home'
+        link: '/admin/stores'
+        resource: 'locations'
+      -
+        name: '設備管理'
+        icon: 'la la-database'
+        link: '/admin/devices'
+        resource: 'devices'
