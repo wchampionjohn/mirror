@@ -6,7 +6,7 @@ ruby '2.6.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+#gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -24,6 +24,24 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'mysql2', '~> 0.5.2'
+gem 'devise', '~> 4.7.1'
+gem 'jquery-rails', '~> 4.4.0'
+gem 'font-awesome-sass', '~> 5.13'
+gem 'simple_form', '~> 5.0.2'
+gem 'faker', '~> 2.13.0'
+gem 'kaminari', '~> 1.2.1'
+gem 'fast_jsonapi', '~> 1.5.0'
+gem 'ransack', '~> 2.3.2' # 進階搜尋
+gem 'carrierwave', '~> 2.1.0'
+gem 'fog-google', '~> 1.11.0'
+gem 'aasm', '~> 5.1.1'
+gem 'settingslogic', '~> 2.0.9'
+gem 'sidekiq', '~> 6.1.1', require: 'sidekiq/web'
+gem 'whenever', '~> 1.0.0', require: false
+gem 'rack-cors', '~> 1.1.1', require: 'rack/cors' # 跨站請求
+gem 'paranoia', '~> 2.4.2' # 假刪除
+gem 'letter_opener', '~> 1.7.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
