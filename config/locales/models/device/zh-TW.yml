@@ -1,0 +1,7 @@
+zh-TW:
+  activerecord:
+    models:
+      device: '設備'
+    attributes:
+      device:
+        name: '設備名稱'

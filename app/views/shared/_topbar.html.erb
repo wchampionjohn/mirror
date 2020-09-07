@@ -30,10 +30,10 @@
               <div class="m-card-user m-card-user--skin-light">
                 <div class="m-card-user__details">
                   <span class="m-card-user__name m--font-weight-500">
-                      <%= current_admin_identity %>
+                      <%#= current_admin_identity %>
                   </span>
                   <a href="javascript:void(0)" class="m-card-user__email m--font-weight-300 m-link">
-                    <%= current_admin_info %>
+                    <%#= current_admin_info %>
                   </a>
                 </div>
               </div>
@@ -43,7 +43,7 @@
                 <ul class="m-nav m-nav--skin-light">
                   <li class="m-nav__separator m-nav__separator--fit"></li>
                   <li class="m-nav__item">
-                    <%= link_to('登出', destroy_administrator_session_path, method: :delete, "data-confirm-swal" => "您確定要登出系統嗎 ?", class: "btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder") %>
+                    <%= link_to('登出', '#', method: :delete, "data-confirm-swal" => "您確定要登出系統嗎 ?", class: "btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder") %>
                   </li>
                 </ul>
               </div>

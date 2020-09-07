@@ -5,9 +5,7 @@
   data-menu-scrollable="true" data-menu-dropdown-timeout="500">
   <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
     <% menus.each_with_index do | menu, index | %>
-    <% if admin_can_manage? menu %>
     <%= render partial: '/shared/menu/item', locals: { index: index, menu: menu } %>
-    <% end %>
     <% end %>
   </ul>
 </div>

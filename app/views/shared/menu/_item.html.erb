@@ -18,16 +18,14 @@
         </span>
       </li>
       <% menu.fetch('items',[]).each do |item|%>
-        <% if can? :read, item['resource'].singularize.camelize.constantize %>
-          <li class="m-menu__item <%= 'm-menu__item--active' if item['name'] == current_item_name%>" aria-haspopup="true"  data-redirect="true">
-            <a href="<%= item['link'] %>" class="m-menu__link ">
-              <i class="m-menu__link-icon <%= item['icon'] %>"></i>
-              <span class="m-menu__link-text">
-                <%= item['name'] %>
-              </span>
-            </a>
-          </li>
-        <% end %>
+      <li class="m-menu__item <%= 'm-menu__item--active' if item['name'] == current_item_name%>" aria-haspopup="true"  data-redirect="true">
+        <a href="<%= item['link'] %>" class="m-menu__link ">
+          <i class="m-menu__link-icon <%= item['icon'] %>"></i>
+          <span class="m-menu__link-text">
+            <%= item['name'] %>
+          </span>
+        </a>
+      </li>
       <% end %>
     </ul>
   </div>

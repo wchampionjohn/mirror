@@ -9,16 +9,16 @@ module Filterable
   def filter_hint
     hint = "依照"
 
-    translation = I18n.t('filter')
+    #translation = I18n.t('filter')
     humanlize_columns = filter_columns.map do | column|
 
-      translation.dig(model_class_name.downcase.to_sym, column.to_sym) || model_class.send(:human_attribute_name, column)
-      #if column.include? '.'
-        #relation_model_name, relation_column_name = column.split('.')
-        #relation_model_name.capitalize.constantize.send(:human_attribute_name, relation_column_name)
-      #else
+      #translation.dig(model_class_name.downcase.to_sym, column.to_sym) || model_class.send(:human_attribute_name, column)
+      if column.include? '.'
+        relation_model_name, relation_column_name = column.split('.')
+        relation_model_name.capitalize.constantize.send(:human_attribute_name, relation_column_name)
+      else
 
-      #end
+      end
     end
 
     hint << humanlize_columns.join(', ')

@@ -3,7 +3,7 @@ class CreateStores < ActiveRecord::Migration[6.0]
     create_table :stores do |t|
       t.string :name
       t.string :address
-      t.integer :city
+      t.integer :city_id
       t.integer :area_id
       t.integer :contact_name
       t.integer :contact_phone_number

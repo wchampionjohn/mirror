@@ -10,6 +10,16 @@ module Mirror
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(serializers)
+    config.autoload_paths += %W(validators)
+
+    config.i18n.default_locale = 'zh-TW'
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.active_job.queue_adapter = :sidekiq
+
+    config.time_zone = "Taipei"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
