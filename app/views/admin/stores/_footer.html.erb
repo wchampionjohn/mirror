@@ -1,0 +1,29 @@
+<div class="m-portlet__foot m-portlet__foot--fit m--margin-top-40">
+  <div class="m-form__actions">
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-4 m--align-left">
+        <%= link_to(prev_step_of_store(current_object), class: 'btn btn-secondary m-btn m-btn--custom m-btn--icon') do %>
+        <span>
+          <i class="la la-arrow-left"></i>
+          &nbsp;&nbsp;
+          <span>
+              <%= text_of_cancel current_object %>
+          </span>
+        </span>
+        <% end %>
+      </div>
+      <div class="col-lg-4 m--align-right">
+        <button id="submit" type="submit" class="btn btn-warning m-btn m-btn--custom m-btn--icon">
+          <span>
+            <span>
+              <%= text_of_save current_object %>
+            </span>
+          </span>
+          </button>
+      </div>
+      <div class="col-lg-2"></div>
+    </div>
+  </div>
+</div>
+

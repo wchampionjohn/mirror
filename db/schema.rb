@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_03_102826) do
+ActiveRecord::Schema.define(version: 2020_09_08_071618) do
+
+  create_table "age_group_stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "age_group_id"
+    t.integer "store_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["age_group_id"], name: "index_age_group_stores_on_age_group_id"
+    t.index ["store_id"], name: "index_age_group_stores_on_store_id"
+  end
+
+  create_table "age_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "group"
+  end
+
+  create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.integer "city_id"
+    t.integer "zip_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "available"
+  end
 
   create_table "devices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -25,16 +55,28 @@ ActiveRecord::Schema.define(version: 2020_09_03_102826) do
     t.index ["store_id"], name: "index_devices_on_store_id"
   end
 
+  create_table "store_business_hours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "day", limit: 2
+    t.boolean "is_openness"
+    t.time "start_time"
+    t.time "end_time"
+    t.integer "store_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["is_openness"], name: "index_store_business_hours_on_is_openness"
+    t.index ["store_id"], name: "index_store_business_hours_on_store_id"
+  end
+
   create_table "stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.integer "city_id"
     t.integer "area_id"
-    t.integer "contact_name"
-    t.integer "contact_phone_number"
+    t.string "contact_name"
+    t.string "contact_phone_number"
     t.integer "devices_count"
     t.string "email"
-    t.string "commission"
+    t.integer "commission"
     t.integer "gender", limit: 2
     t.integer "contract_attachment"
     t.string "note"

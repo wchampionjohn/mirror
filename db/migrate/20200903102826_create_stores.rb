@@ -5,11 +5,11 @@ class CreateStores < ActiveRecord::Migration[6.0]
       t.string :address
       t.integer :city_id
       t.integer :area_id
-      t.integer :contact_name
-      t.integer :contact_phone_number
+      t.string :contact_name
+      t.string :contact_phone_number
       t.integer :devices_count
       t.string :email
-      t.string :commission
+      t.integer :commission
       t.integer :gender, limit: 2
       t.integer :contract_attachment
       t.string :note

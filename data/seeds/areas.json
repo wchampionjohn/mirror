@@ -1,0 +1,2228 @@
+[
+  {
+    "id": 1,
+    "name": "中正區",
+    "zip_code": 100,
+    "city_id": 1
+  },
+  {
+    "id": 2,
+    "name": "大同區",
+    "zip_code": 103,
+    "city_id": 1
+  },
+  {
+    "id": 3,
+    "name": "中山區",
+    "zip_code": 104,
+    "city_id": 1
+  },
+  {
+    "id": 4,
+    "name": "松山區",
+    "zip_code": 105,
+    "city_id": 1
+  },
+  {
+    "id": 5,
+    "name": "大安區",
+    "zip_code": 106,
+    "city_id": 1
+  },
+  {
+    "id": 6,
+    "name": "萬華區",
+    "zip_code": 108,
+    "city_id": 1
+  },
+  {
+    "id": 7,
+    "name": "信義區",
+    "zip_code": 110,
+    "city_id": 1
+  },
+  {
+    "id": 8,
+    "name": "士林區",
+    "zip_code": 111,
+    "city_id": 1
+  },
+  {
+    "id": 9,
+    "name": "北投區",
+    "zip_code": 112,
+    "city_id": 1
+  },
+  {
+    "id": 10,
+    "name": "內湖區",
+    "zip_code": 114,
+    "city_id": 1
+  },
+  {
+    "id": 11,
+    "name": "南港區",
+    "zip_code": 115,
+    "city_id": 1
+  },
+  {
+    "id": 12,
+    "name": "文山區",
+    "zip_code": 116,
+    "city_id": 1
+  },
+  {
+    "id": 13,
+    "name": "仁愛區",
+    "zip_code": 200,
+    "city_id": 2
+  },
+  {
+    "id": 14,
+    "name": "信義區",
+    "zip_code": 201,
+    "city_id": 2
+  },
+  {
+    "id": 15,
+    "name": "中正區",
+    "zip_code": 202,
+    "city_id": 2
+  },
+  {
+    "id": 16,
+    "name": "中山區",
+    "zip_code": 203,
+    "city_id": 2
+  },
+  {
+    "id": 17,
+    "name": "安樂區",
+    "zip_code": 204,
+    "city_id": 2
+  },
+  {
+    "id": 18,
+    "name": "暖暖區",
+    "zip_code": 205,
+    "city_id": 2
+  },
+  {
+    "id": 19,
+    "name": "七堵區",
+    "zip_code": 206,
+    "city_id": 2
+  },
+  {
+    "id": 20,
+    "name": "萬里區",
+    "zip_code": 207,
+    "city_id": 3
+  },
+  {
+    "id": 21,
+    "name": "金山區",
+    "zip_code": 208,
+    "city_id": 3
+  },
+  {
+    "id": 22,
+    "name": "板橋區",
+    "zip_code": 220,
+    "city_id": 3
+  },
+  {
+    "id": 23,
+    "name": "汐止區",
+    "zip_code": 221,
+    "city_id": 3
+  },
+  {
+    "id": 24,
+    "name": "深坑區",
+    "zip_code": 222,
+    "city_id": 3
+  },
+  {
+    "id": 25,
+    "name": "石碇區",
+    "zip_code": 223,
+    "city_id": 3
+  },
+  {
+    "id": 26,
+    "name": "瑞芳區",
+    "zip_code": 224,
+    "city_id": 3
+  },
+  {
+    "id": 27,
+    "name": "平溪區",
+    "zip_code": 226,
+    "city_id": 3
+  },
+  {
+    "id": 28,
+    "name": "雙溪區",
+    "zip_code": 227,
+    "city_id": 3
+  },
+  {
+    "id": 29,
+    "name": "貢寮區",
+    "zip_code": 228,
+    "city_id": 3
+  },
+  {
+    "id": 30,
+    "name": "新店區",
+    "zip_code": 231,
+    "city_id": 3
+  },
+  {
+    "id": 31,
+    "name": "坪林區",
+    "zip_code": 232,
+    "city_id": 3
+  },
+  {
+    "id": 32,
+    "name": "烏來區",
+    "zip_code": 233,
+    "city_id": 3
+  },
+  {
+    "id": 33,
+    "name": "永和區",
+    "zip_code": 234,
+    "city_id": 3
+  },
+  {
+    "id": 34,
+    "name": "中和區",
+    "zip_code": 235,
+    "city_id": 3
+  },
+  {
+    "id": 35,
+    "name": "土城區",
+    "zip_code": 236,
+    "city_id": 3
+  },
+  {
+    "id": 36,
+    "name": "三峽區",
+    "zip_code": 237,
+    "city_id": 3
+  },
+  {
+    "id": 37,
+    "name": "樹林區",
+    "zip_code": 238,
+    "city_id": 3
+  },
+  {
+    "id": 38,
+    "name": "鶯歌區",
+    "zip_code": 239,
+    "city_id": 3
+  },
+  {
+    "id": 39,
+    "name": "三重區",
+    "zip_code": 241,
+    "city_id": 3
+  },
+  {
+    "id": 40,
+    "name": "新莊區",
+    "zip_code": 242,
+    "city_id": 3
+  },
+  {
+    "id": 41,
+    "name": "泰山區",
+    "zip_code": 243,
+    "city_id": 3
+  },
+  {
+    "id": 42,
+    "name": "林口區",
+    "zip_code": 244,
+    "city_id": 3
+  },
+  {
+    "id": 43,
+    "name": "蘆洲區",
+    "zip_code": 247,
+    "city_id": 3
+  },
+  {
+    "id": 44,
+    "name": "五股區",
+    "zip_code": 248,
+    "city_id": 3
+  },
+  {
+    "id": 45,
+    "name": "八里區",
+    "zip_code": 249,
+    "city_id": 3
+  },
+  {
+    "id": 46,
+    "name": "淡水區",
+    "zip_code": 251,
+    "city_id": 3
+  },
+  {
+    "id": 47,
+    "name": "三芝區",
+    "zip_code": 252,
+    "city_id": 3
+  },
+  {
+    "id": 48,
+    "name": "石門區",
+    "zip_code": 253,
+    "city_id": 3
+  },
+  {
+    "id": 49,
+    "name": "南竿鄉",
+    "zip_code": 209,
+    "city_id": 4
+  },
+  {
+    "id": 50,
+    "name": "北竿鄉",
+    "zip_code": 210,
+    "city_id": 4
+  },
+  {
+    "id": 51,
+    "name": "莒光鄉",
+    "zip_code": 211,
+    "city_id": 4
+  },
+  {
+    "id": 52,
+    "name": "東引鄉",
+    "zip_code": 212,
+    "city_id": 4
+  },
+  {
+    "id": 53,
+    "name": "宜蘭市",
+    "zip_code": 260,
+    "city_id": 5
+  },
+  {
+    "id": 54,
+    "name": "頭城鎮",
+    "zip_code": 261,
+    "city_id": 5
+  },
+  {
+    "id": 55,
+    "name": "礁溪鄉",
+    "zip_code": 262,
+    "city_id": 5
+  },
+  {
+    "id": 56,
+    "name": "壯圍鄉",
+    "zip_code": 263,
+    "city_id": 5
+  },
+  {
+    "id": 57,
+    "name": "員山鄉",
+    "zip_code": 264,
+    "city_id": 5
+  },
+  {
+    "id": 58,
+    "name": "羅東鎮",
+    "zip_code": 265,
+    "city_id": 5
+  },
+  {
+    "id": 59,
+    "name": "三星鄉",
+    "zip_code": 266,
+    "city_id": 5
+  },
+  {
+    "id": 60,
+    "name": "大同鄉",
+    "zip_code": 267,
+    "city_id": 5
+  },
+  {
+    "id": 61,
+    "name": "五結鄉",
+    "zip_code": 268,
+    "city_id": 5
+  },
+  {
+    "id": 62,
+    "name": "冬山鄉",
+    "zip_code": 269,
+    "city_id": 5
+  },
+  {
+    "id": 63,
+    "name": "蘇澳鎮",
+    "zip_code": 270,
+    "city_id": 5
+  },
+  {
+    "id": 64,
+    "name": "南澳鄉",
+    "zip_code": 272,
+    "city_id": 5
+  },
+  {
+    "id": 65,
+    "name": "釣魚台",
+    "zip_code": 290,
+    "city_id": 6
+  },
+  {
+    "id": 66,
+    "name": "東區",
+    "zip_code": 300,
+    "city_id": 7
+  },
+  {
+    "id": 67,
+    "name": "北區",
+    "zip_code": 300,
+    "city_id": 7
+  },
+  {
+    "id": 68,
+    "name": "香山區",
+    "zip_code": 300,
+    "city_id": 7
+  },
+  {
+    "id": 69,
+    "name": "竹北市",
+    "zip_code": 302,
+    "city_id": 8
+  },
+  {
+    "id": 70,
+    "name": "湖口鄉",
+    "zip_code": 303,
+    "city_id": 8
+  },
+  {
+    "id": 71,
+    "name": "新豐鄉",
+    "zip_code": 304,
+    "city_id": 8
+  },
+  {
+    "id": 72,
+    "name": "新埔鎮",
+    "zip_code": 305,
+    "city_id": 8
+  },
+  {
+    "id": 73,
+    "name": "關西鎮",
+    "zip_code": 306,
+    "city_id": 8
+  },
+  {
+    "id": 74,
+    "name": "芎林鄉",
+    "zip_code": 307,
+    "city_id": 8
+  },
+  {
+    "id": 75,
+    "name": "寶山鄉",
+    "zip_code": 308,
+    "city_id": 8
+  },
+  {
+    "id": 76,
+    "name": "竹東鎮",
+    "zip_code": 310,
+    "city_id": 8
+  },
+  {
+    "id": 77,
+    "name": "五峰鄉",
+    "zip_code": 311,
+    "city_id": 8
+  },
+  {
+    "id": 78,
+    "name": "橫山鄉",
+    "zip_code": 312,
+    "city_id": 8
+  },
+  {
+    "id": 79,
+    "name": "尖石鄉",
+    "zip_code": 313,
+    "city_id": 8
+  },
+  {
+    "id": 80,
+    "name": "北埔鄉",
+    "zip_code": 314,
+    "city_id": 8
+  },
+  {
+    "id": 81,
+    "name": "峨眉鄉",
+    "zip_code": 315,
+    "city_id": 8
+  },
+  {
+    "id": 82,
+    "name": "中壢市",
+    "zip_code": 320,
+    "city_id": 9
+  },
+  {
+    "id": 83,
+    "name": "平鎮市",
+    "zip_code": 324,
+    "city_id": 9
+  },
+  {
+    "id": 84,
+    "name": "龍潭鄉",
+    "zip_code": 325,
+    "city_id": 9
+  },
+  {
+    "id": 85,
+    "name": "楊梅市",
+    "zip_code": 326,
+    "city_id": 9
+  },
+  {
+    "id": 86,
+    "name": "新屋鄉",
+    "zip_code": 327,
+    "city_id": 9
+  },
+  {
+    "id": 87,
+    "name": "觀音鄉",
+    "zip_code": 328,
+    "city_id": 9
+  },
+  {
+    "id": 88,
+    "name": "桃園市",
+    "zip_code": 330,
+    "city_id": 9
+  },
+  {
+    "id": 89,
+    "name": "龜山鄉",
+    "zip_code": 333,
+    "city_id": 9
+  },
+  {
+    "id": 90,
+    "name": "八德市",
+    "zip_code": 334,
+    "city_id": 9
+  },
+  {
+    "id": 91,
+    "name": "大溪鎮",
+    "zip_code": 335,
+    "city_id": 9
+  },
+  {
+    "id": 92,
+    "name": "復興鄉",
+    "zip_code": 336,
+    "city_id": 9
+  },
+  {
+    "id": 93,
+    "name": "大園鄉",
+    "zip_code": 337,
+    "city_id": 9
+  },
+  {
+    "id": 94,
+    "name": "蘆竹鄉",
+    "zip_code": 338,
+    "city_id": 9
+  },
+  {
+    "id": 95,
+    "name": "竹南鎮",
+    "zip_code": 350,
+    "city_id": 10
+  },
+  {
+    "id": 96,
+    "name": "頭份鎮",
+    "zip_code": 351,
+    "city_id": 10
+  },
+  {
+    "id": 97,
+    "name": "三灣鄉",
+    "zip_code": 352,
+    "city_id": 10
+  },
+  {
+    "id": 98,
+    "name": "南庄鄉",
+    "zip_code": 353,
+    "city_id": 10
+  },
+  {
+    "id": 99,
+    "name": "獅潭鄉",
+    "zip_code": 354,
+    "city_id": 10
+  },
+  {
+    "id": 100,
+    "name": "後龍鎮",
+    "zip_code": 356,
+    "city_id": 10
+  },
+  {
+    "id": 101,
+    "name": "通霄鎮",
+    "zip_code": 357,
+    "city_id": 10
+  },
+  {
+    "id": 102,
+    "name": "苑裡鎮",
+    "zip_code": 358,
+    "city_id": 10
+  },
+  {
+    "id": 103,
+    "name": "苗栗市",
+    "zip_code": 360,
+    "city_id": 10
+  },
+  {
+    "id": 104,
+    "name": "造橋鄉",
+    "zip_code": 361,
+    "city_id": 10
+  },
+  {
+    "id": 105,
+    "name": "頭屋鄉",
+    "zip_code": 362,
+    "city_id": 10
+  },
+  {
+    "id": 106,
+    "name": "公館鄉",
+    "zip_code": 363,
+    "city_id": 10
+  },
+  {
+    "id": 107,
+    "name": "大湖鄉",
+    "zip_code": 364,
+    "city_id": 10
+  },
+  {
+    "id": 108,
+    "name": "泰安鄉",
+    "zip_code": 365,
+    "city_id": 10
+  },
+  {
+    "id": 109,
+    "name": "銅鑼鄉",
+    "zip_code": 366,
+    "city_id": 10
+  },
+  {
+    "id": 110,
+    "name": "三義鄉",
+    "zip_code": 367,
+    "city_id": 10
+  },
+  {
+    "id": 111,
+    "name": "西湖鄉",
+    "zip_code": 368,
+    "city_id": 10
+  },
+  {
+    "id": 112,
+    "name": "卓蘭鎮",
+    "zip_code": 369,
+    "city_id": 10
+  },
+  {
+    "id": 113,
+    "name": "中區",
+    "zip_code": 400,
+    "city_id": 11
+  },
+  {
+    "id": 114,
+    "name": "東區",
+    "zip_code": 401,
+    "city_id": 11
+  },
+  {
+    "id": 115,
+    "name": "南區",
+    "zip_code": 402,
+    "city_id": 11
+  },
+  {
+    "id": 116,
+    "name": "西區",
+    "zip_code": 403,
+    "city_id": 11
+  },
+  {
+    "id": 117,
+    "name": "北區",
+    "zip_code": 404,
+    "city_id": 11
+  },
+  {
+    "id": 118,
+    "name": "北屯區",
+    "zip_code": 406,
+    "city_id": 11
+  },
+  {
+    "id": 119,
+    "name": "西屯區",
+    "zip_code": 407,
+    "city_id": 11
+  },
+  {
+    "id": 120,
+    "name": "南屯區",
+    "zip_code": 408,
+    "city_id": 11
+  },
+  {
+    "id": 121,
+    "name": "太平區",
+    "zip_code": 411,
+    "city_id": 11
+  },
+  {
+    "id": 122,
+    "name": "大里區",
+    "zip_code": 412,
+    "city_id": 11
+  },
+  {
+    "id": 123,
+    "name": "霧峰區",
+    "zip_code": 413,
+    "city_id": 11
+  },
+  {
+    "id": 124,
+    "name": "烏日區",
+    "zip_code": 414,
+    "city_id": 11
+  },
+  {
+    "id": 125,
+    "name": "豐原區",
+    "zip_code": 420,
+    "city_id": 11
+  },
+  {
+    "id": 126,
+    "name": "后里區",
+    "zip_code": 421,
+    "city_id": 11
+  },
+  {
+    "id": 127,
+    "name": "石岡區",
+    "zip_code": 422,
+    "city_id": 11
+  },
+  {
+    "id": 128,
+    "name": "東勢區",
+    "zip_code": 423,
+    "city_id": 11
+  },
+  {
+    "id": 129,
+    "name": "和平區",
+    "zip_code": 424,
+    "city_id": 11
+  },
+  {
+    "id": 130,
+    "name": "新社區",
+    "zip_code": 426,
+    "city_id": 11
+  },
+  {
+    "id": 131,
+    "name": "潭子區",
+    "zip_code": 427,
+    "city_id": 11
+  },
+  {
+    "id": 132,
+    "name": "大雅區",
+    "zip_code": 428,
+    "city_id": 11
+  },
+  {
+    "id": 133,
+    "name": "神岡區",
+    "zip_code": 429,
+    "city_id": 11
+  },
+  {
+    "id": 134,
+    "name": "大肚區",
+    "zip_code": 432,
+    "city_id": 11
+  },
+  {
+    "id": 135,
+    "name": "沙鹿區",
+    "zip_code": 433,
+    "city_id": 11
+  },
+  {
+    "id": 136,
+    "name": "龍井區",
+    "zip_code": 434,
+    "city_id": 11
+  },
+  {
+    "id": 137,
+    "name": "梧棲區",
+    "zip_code": 435,
+    "city_id": 11
+  },
+  {
+    "id": 138,
+    "name": "清水區",
+    "zip_code": 436,
+    "city_id": 11
+  },
+  {
+    "id": 139,
+    "name": "大甲區",
+    "zip_code": 437,
+    "city_id": 11
+  },
+  {
+    "id": 140,
+    "name": "外埔區",
+    "zip_code": 438,
+    "city_id": 11
+  },
+  {
+    "id": 141,
+    "name": "大安區",
+    "zip_code": 439,
+    "city_id": 11
+  },
+  {
+    "id": 142,
+    "name": "彰化市",
+    "zip_code": 500,
+    "city_id": 12
+  },
+  {
+    "id": 143,
+    "name": "芬園鄉",
+    "zip_code": 502,
+    "city_id": 12
+  },
+  {
+    "id": 144,
+    "name": "花壇鄉",
+    "zip_code": 503,
+    "city_id": 12
+  },
+  {
+    "id": 145,
+    "name": "秀水鄉",
+    "zip_code": 504,
+    "city_id": 12
+  },
+  {
+    "id": 146,
+    "name": "鹿港鎮",
+    "zip_code": 505,
+    "city_id": 12
+  },
+  {
+    "id": 147,
+    "name": "福興鄉",
+    "zip_code": 506,
+    "city_id": 12
+  },
+  {
+    "id": 148,
+    "name": "線西鄉",
+    "zip_code": 507,
+    "city_id": 12
+  },
+  {
+    "id": 149,
+    "name": "和美鎮",
+    "zip_code": 508,
+    "city_id": 12
+  },
+  {
+    "id": 150,
+    "name": "伸港鄉",
+    "zip_code": 509,
+    "city_id": 12
+  },
+  {
+    "id": 151,
+    "name": "員林鎮",
+    "zip_code": 510,
+    "city_id": 12
+  },
+  {
+    "id": 152,
+    "name": "社頭鄉",
+    "zip_code": 511,
+    "city_id": 12
+  },
+  {
+    "id": 153,
+    "name": "永靖鄉",
+    "zip_code": 512,
+    "city_id": 12
+  },
+  {
+    "id": 154,
+    "name": "埔心鄉",
+    "zip_code": 513,
+    "city_id": 12
+  },
+  {
+    "id": 155,
+    "name": "溪湖鎮",
+    "zip_code": 514,
+    "city_id": 12
+  },
+  {
+    "id": 156,
+    "name": "大村鄉",
+    "zip_code": 515,
+    "city_id": 12
+  },
+  {
+    "id": 157,
+    "name": "埔鹽鄉",
+    "zip_code": 516,
+    "city_id": 12
+  },
+  {
+    "id": 158,
+    "name": "田中鎮",
+    "zip_code": 520,
+    "city_id": 12
+  },
+  {
+    "id": 159,
+    "name": "北斗鎮",
+    "zip_code": 521,
+    "city_id": 12
+  },
+  {
+    "id": 160,
+    "name": "田尾鄉",
+    "zip_code": 522,
+    "city_id": 12
+  },
+  {
+    "id": 161,
+    "name": "埤頭鄉",
+    "zip_code": 523,
+    "city_id": 12
+  },
+  {
+    "id": 162,
+    "name": "溪州鄉",
+    "zip_code": 524,
+    "city_id": 12
+  },
+  {
+    "id": 163,
+    "name": "竹塘鄉",
+    "zip_code": 525,
+    "city_id": 12
+  },
+  {
+    "id": 164,
+    "name": "二林鎮",
+    "zip_code": 526,
+    "city_id": 12
+  },
+  {
+    "id": 165,
+    "name": "大城鄉",
+    "zip_code": 527,
+    "city_id": 12
+  },
+  {
+    "id": 166,
+    "name": "芳苑鄉",
+    "zip_code": 528,
+    "city_id": 12
+  },
+  {
+    "id": 167,
+    "name": "二水鄉",
+    "zip_code": 530,
+    "city_id": 12
+  },
+  {
+    "id": 168,
+    "name": "南投市",
+    "zip_code": 540,
+    "city_id": 13
+  },
+  {
+    "id": 169,
+    "name": "中寮鄉",
+    "zip_code": 541,
+    "city_id": 13
+  },
+  {
+    "id": 170,
+    "name": "草屯鎮",
+    "zip_code": 542,
+    "city_id": 13
+  },
+  {
+    "id": 171,
+    "name": "國姓鄉",
+    "zip_code": 544,
+    "city_id": 13
+  },
+  {
+    "id": 172,
+    "name": "埔里鎮",
+    "zip_code": 545,
+    "city_id": 13
+  },
+  {
+    "id": 173,
+    "name": "仁愛鄉",
+    "zip_code": 546,
+    "city_id": 13
+  },
+  {
+    "id": 174,
+    "name": "名間鄉",
+    "zip_code": 551,
+    "city_id": 13
+  },
+  {
+    "id": 175,
+    "name": "集集鎮",
+    "zip_code": 552,
+    "city_id": 13
+  },
+  {
+    "id": 176,
+    "name": "水里鄉",
+    "zip_code": 553,
+    "city_id": 13
+  },
+  {
+    "id": 177,
+    "name": "魚池鄉",
+    "zip_code": 555,
+    "city_id": 13
+  },
+  {
+    "id": 178,
+    "name": "信義鄉",
+    "zip_code": 556,
+    "city_id": 13
+  },
+  {
+    "id": 179,
+    "name": "竹山鎮",
+    "zip_code": 557,
+    "city_id": 13
+  },
+  {
+    "id": 180,
+    "name": "鹿谷鄉",
+    "zip_code": 558,
+    "city_id": 13
+  },
+  {
+    "id": 181,
+    "name": "東區",
+    "zip_code": 600,
+    "city_id": 14
+  },
+  {
+    "id": 182,
+    "name": "西區",
+    "zip_code": 600,
+    "city_id": 14
+  },
+  {
+    "id": 183,
+    "name": "番路鄉",
+    "zip_code": 602,
+    "city_id": 15
+  },
+  {
+    "id": 184,
+    "name": "梅山鄉",
+    "zip_code": 603,
+    "city_id": 15
+  },
+  {
+    "id": 185,
+    "name": "竹崎鄉",
+    "zip_code": 604,
+    "city_id": 15
+  },
+  {
+    "id": 186,
+    "name": "阿里山鄉",
+    "zip_code": 605,
+    "city_id": 15
+  },
+  {
+    "id": 187,
+    "name": "中埔鄉",
+    "zip_code": 606,
+    "city_id": 15
+  },
+  {
+    "id": 188,
+    "name": "大埔鄉",
+    "zip_code": 607,
+    "city_id": 15
+  },
+  {
+    "id": 189,
+    "name": "水上鄉",
+    "zip_code": 608,
+    "city_id": 15
+  },
+  {
+    "id": 190,
+    "name": "鹿草鄉",
+    "zip_code": 611,
+    "city_id": 15
+  },
+  {
+    "id": 191,
+    "name": "太保市",
+    "zip_code": 612,
+    "city_id": 15
+  },
+  {
+    "id": 192,
+    "name": "朴子市",
+    "zip_code": 613,
+    "city_id": 15
+  },
+  {
+    "id": 193,
+    "name": "東石鄉",
+    "zip_code": 614,
+    "city_id": 15
+  },
+  {
+    "id": 194,
+    "name": "六腳鄉",
+    "zip_code": 615,
+    "city_id": 15
+  },
+  {
+    "id": 195,
+    "name": "新港鄉",
+    "zip_code": 616,
+    "city_id": 15
+  },
+  {
+    "id": 196,
+    "name": "民雄鄉",
+    "zip_code": 621,
+    "city_id": 15
+  },
+  {
+    "id": 197,
+    "name": "大林鎮",
+    "zip_code": 622,
+    "city_id": 15
+  },
+  {
+    "id": 198,
+    "name": "溪口鄉",
+    "zip_code": 623,
+    "city_id": 15
+  },
+  {
+    "id": 199,
+    "name": "義竹鄉",
+    "zip_code": 624,
+    "city_id": 15
+  },
+  {
+    "id": 200,
+    "name": "布袋鎮",
+    "zip_code": 625,
+    "city_id": 15
+  },
+  {
+    "id": 201,
+    "name": "斗南鎮",
+    "zip_code": 630,
+    "city_id": 16
+  },
+  {
+    "id": 202,
+    "name": "大埤鄉",
+    "zip_code": 631,
+    "city_id": 16
+  },
+  {
+    "id": 203,
+    "name": "虎尾鎮",
+    "zip_code": 632,
+    "city_id": 16
+  },
+  {
+    "id": 204,
+    "name": "土庫鎮",
+    "zip_code": 633,
+    "city_id": 16
+  },
+  {
+    "id": 205,
+    "name": "褒忠鄉",
+    "zip_code": 634,
+    "city_id": 16
+  },
+  {
+    "id": 206,
+    "name": "東勢鄉",
+    "zip_code": 635,
+    "city_id": 16
+  },
+  {
+    "id": 207,
+    "name": "台西鄉",
+    "zip_code": 636,
+    "city_id": 16
+  },
+  {
+    "id": 208,
+    "name": "崙背鄉",
+    "zip_code": 637,
+    "city_id": 16
+  },
+  {
+    "id": 209,
+    "name": "麥寮鄉",
+    "zip_code": 638,
+    "city_id": 16
+  },
+  {
+    "id": 210,
+    "name": "斗六市",
+    "zip_code": 640,
+    "city_id": 16
+  },
+  {
+    "id": 211,
+    "name": "林內鄉",
+    "zip_code": 643,
+    "city_id": 16
+  },
+  {
+    "id": 212,
+    "name": "古坑鄉",
+    "zip_code": 646,
+    "city_id": 16
+  },
+  {
+    "id": 213,
+    "name": "莿桐鄉",
+    "zip_code": 647,
+    "city_id": 16
+  },
+  {
+    "id": 214,
+    "name": "西螺鎮",
+    "zip_code": 648,
+    "city_id": 16
+  },
+  {
+    "id": 215,
+    "name": "二崙鄉",
+    "zip_code": 649,
+    "city_id": 16
+  },
+  {
+    "id": 216,
+    "name": "北港鎮",
+    "zip_code": 651,
+    "city_id": 16
+  },
+  {
+    "id": 217,
+    "name": "水林鄉",
+    "zip_code": 652,
+    "city_id": 16
+  },
+  {
+    "id": 218,
+    "name": "口湖鄉",
+    "zip_code": 653,
+    "city_id": 16
+  },
+  {
+    "id": 219,
+    "name": "四湖鄉",
+    "zip_code": 654,
+    "city_id": 16
+  },
+  {
+    "id": 220,
+    "name": "元長鄉",
+    "zip_code": 655,
+    "city_id": 16
+  },
+  {
+    "id": 221,
+    "name": "中西區",
+    "zip_code": 700,
+    "city_id": 17
+  },
+  {
+    "id": 222,
+    "name": "東區",
+    "zip_code": 701,
+    "city_id": 17
+  },
+  {
+    "id": 223,
+    "name": "南區",
+    "zip_code": 702,
+    "city_id": 17
+  },
+  {
+    "id": 224,
+    "name": "北區",
+    "zip_code": 704,
+    "city_id": 17
+  },
+  {
+    "id": 225,
+    "name": "安平區",
+    "zip_code": 708,
+    "city_id": 17
+  },
+  {
+    "id": 226,
+    "name": "安南區",
+    "zip_code": 709,
+    "city_id": 17
+  },
+  {
+    "id": 227,
+    "name": "永康區",
+    "zip_code": 710,
+    "city_id": 17
+  },
+  {
+    "id": 228,
+    "name": "歸仁區",
+    "zip_code": 711,
+    "city_id": 17
+  },
+  {
+    "id": 229,
+    "name": "新化區",
+    "zip_code": 712,
+    "city_id": 17
+  },
+  {
+    "id": 230,
+    "name": "左鎮區",
+    "zip_code": 713,
+    "city_id": 17
+  },
+  {
+    "id": 231,
+    "name": "玉井區",
+    "zip_code": 714,
+    "city_id": 17
+  },
+  {
+    "id": 232,
+    "name": "楠西區",
+    "zip_code": 715,
+    "city_id": 17
+  },
+  {
+    "id": 233,
+    "name": "南化區",
+    "zip_code": 716,
+    "city_id": 17
+  },
+  {
+    "id": 234,
+    "name": "仁德區",
+    "zip_code": 717,
+    "city_id": 17
+  },
+  {
+    "id": 235,
+    "name": "關廟區",
+    "zip_code": 718,
+    "city_id": 17
+  },
+  {
+    "id": 236,
+    "name": "龍崎區",
+    "zip_code": 719,
+    "city_id": 17
+  },
+  {
+    "id": 237,
+    "name": "官田區",
+    "zip_code": 720,
+    "city_id": 17
+  },
+  {
+    "id": 238,
+    "name": "麻豆區",
+    "zip_code": 721,
+    "city_id": 17
+  },
+  {
+    "id": 239,
+    "name": "佳里區",
+    "zip_code": 722,
+    "city_id": 17
+  },
+  {
+    "id": 240,
+    "name": "西港區",
+    "zip_code": 723,
+    "city_id": 17
+  },
+  {
+    "id": 241,
+    "name": "七股區",
+    "zip_code": 724,
+    "city_id": 17
+  },
+  {
+    "id": 242,
+    "name": "將軍區",
+    "zip_code": 725,
+    "city_id": 17
+  },
+  {
+    "id": 243,
+    "name": "學甲區",
+    "zip_code": 726,
+    "city_id": 17
+  },
+  {
+    "id": 244,
+    "name": "北門區",
+    "zip_code": 727,
+    "city_id": 17
+  },
+  {
+    "id": 245,
+    "name": "新營區",
+    "zip_code": 730,
+    "city_id": 17
+  },
+  {
+    "id": 246,
+    "name": "後壁區",
+    "zip_code": 731,
+    "city_id": 17
+  },
+  {
+    "id": 247,
+    "name": "白河區",
+    "zip_code": 732,
+    "city_id": 17
+  },
+  {
+    "id": 248,
+    "name": "東山區",
+    "zip_code": 733,
+    "city_id": 17
+  },
+  {
+    "id": 249,
+    "name": "六甲區",
+    "zip_code": 734,
+    "city_id": 17
+  },
+  {
+    "id": 250,
+    "name": "下營區",
+    "zip_code": 735,
+    "city_id": 17
+  },
+  {
+    "id": 251,
+    "name": "柳營區",
+    "zip_code": 736,
+    "city_id": 17
+  },
+  {
+    "id": 252,
+    "name": "鹽水區",
+    "zip_code": 737,
+    "city_id": 17
+  },
+  {
+    "id": 253,
+    "name": "善化區",
+    "zip_code": 741,
+    "city_id": 17
+  },
+  {
+    "id": 254,
+    "name": "大內區",
+    "zip_code": 742,
+    "city_id": 17
+  },
+  {
+    "id": 255,
+    "name": "山上區",
+    "zip_code": 743,
+    "city_id": 17
+  },
+  {
+    "id": 256,
+    "name": "新市區",
+    "zip_code": 744,
+    "city_id": 17
+  },
+  {
+    "id": 257,
+    "name": "安定區",
+    "zip_code": 745,
+    "city_id": 17
+  },
+  {
+    "id": 258,
+    "name": "新興區",
+    "zip_code": 800,
+    "city_id": 18
+  },
+  {
+    "id": 259,
+    "name": "前金區",
+    "zip_code": 801,
+    "city_id": 18
+  },
+  {
+    "id": 260,
+    "name": "苓雅區",
+    "zip_code": 802,
+    "city_id": 18
+  },
+  {
+    "id": 261,
+    "name": "鹽埕區",
+    "zip_code": 803,
+    "city_id": 18
+  },
+  {
+    "id": 262,
+    "name": "鼓山區",
+    "zip_code": 804,
+    "city_id": 18
+  },
+  {
+    "id": 263,
+    "name": "旗津區",
+    "zip_code": 805,
+    "city_id": 18
+  },
+  {
+    "id": 264,
+    "name": "前鎮區",
+    "zip_code": 806,
+    "city_id": 18
+  },
+  {
+    "id": 265,
+    "name": "三民區",
+    "zip_code": 807,
+    "city_id": 18
+  },
+  {
+    "id": 266,
+    "name": "楠梓區",
+    "zip_code": 811,
+    "city_id": 18
+  },
+  {
+    "id": 267,
+    "name": "小港區",
+    "zip_code": 812,
+    "city_id": 18
+  },
+  {
+    "id": 268,
+    "name": "左營區",
+    "zip_code": 813,
+    "city_id": 18
+  },
+  {
+    "id": 269,
+    "name": "仁武區",
+    "zip_code": 814,
+    "city_id": 18
+  },
+  {
+    "id": 270,
+    "name": "大社區",
+    "zip_code": 815,
+    "city_id": 18
+  },
+  {
+    "id": 271,
+    "name": "岡山區",
+    "zip_code": 820,
+    "city_id": 18
+  },
+  {
+    "id": 272,
+    "name": "路竹區",
+    "zip_code": 821,
+    "city_id": 18
+  },
+  {
+    "id": 273,
+    "name": "阿蓮區",
+    "zip_code": 822,
+    "city_id": 18
+  },
+  {
+    "id": 274,
+    "name": "田寮區",
+    "zip_code": 823,
+    "city_id": 18
+  },
+  {
+    "id": 275,
+    "name": "燕巢區",
+    "zip_code": 824,
+    "city_id": 18
+  },
+  {
+    "id": 276,
+    "name": "橋頭區",
+    "zip_code": 825,
+    "city_id": 18
+  },
+  {
+    "id": 277,
+    "name": "梓官區",
+    "zip_code": 826,
+    "city_id": 18
+  },
+  {
+    "id": 278,
+    "name": "彌陀區",
+    "zip_code": 827,
+    "city_id": 18
+  },
+  {
+    "id": 279,
+    "name": "永安區",
+    "zip_code": 828,
+    "city_id": 18
+  },
+  {
+    "id": 280,
+    "name": "湖內區",
+    "zip_code": 829,
+    "city_id": 18
+  },
+  {
+    "id": 281,
+    "name": "鳳山區",
+    "zip_code": 830,
+    "city_id": 18
+  },
+  {
+    "id": 282,
+    "name": "大寮區",
+    "zip_code": 831,
+    "city_id": 18
+  },
+  {
+    "id": 283,
+    "name": "林園區",
+    "zip_code": 832,
+    "city_id": 18
+  },
+  {
+    "id": 284,
+    "name": "鳥松區",
+    "zip_code": 833,
+    "city_id": 18
+  },
+  {
+    "id": 285,
+    "name": "大樹區",
+    "zip_code": 840,
+    "city_id": 18
+  },
+  {
+    "id": 286,
+    "name": "旗山區",
+    "zip_code": 842,
+    "city_id": 18
+  },
+  {
+    "id": 287,
+    "name": "美濃區",
+    "zip_code": 843,
+    "city_id": 18
+  },
+  {
+    "id": 288,
+    "name": "六龜區",
+    "zip_code": 844,
+    "city_id": 18
+  },
+  {
+    "id": 289,
+    "name": "內門區",
+    "zip_code": 845,
+    "city_id": 18
+  },
+  {
+    "id": 290,
+    "name": "杉林區",
+    "zip_code": 846,
+    "city_id": 18
+  },
+  {
+    "id": 291,
+    "name": "甲仙區",
+    "zip_code": 847,
+    "city_id": 18
+  },
+  {
+    "id": 292,
+    "name": "桃源區",
+    "zip_code": 848,
+    "city_id": 18
+  },
+  {
+    "id": 293,
+    "name": "那瑪夏區",
+    "zip_code": 849,
+    "city_id": 18
+  },
+  {
+    "id": 294,
+    "name": "茂林區",
+    "zip_code": 851,
+    "city_id": 18
+  },
+  {
+    "id": 295,
+    "name": "茄萣區",
+    "zip_code": 852,
+    "city_id": 18
+  },
+  {
+    "id": 296,
+    "name": "東沙群島",
+    "zip_code": 817,
+    "city_id": 19
+  },
+  {
+    "id": 297,
+    "name": "南沙群島",
+    "zip_code": 819,
+    "city_id": 19
+  },
+  {
+    "id": 298,
+    "name": "馬公市",
+    "zip_code": 880,
+    "city_id": 20
+  },
+  {
+    "id": 299,
+    "name": "西嶼鄉",
+    "zip_code": 881,
+    "city_id": 20
+  },
+  {
+    "id": 300,
+    "name": "望安鄉",
+    "zip_code": 882,
+    "city_id": 20
+  },
+  {
+    "id": 301,
+    "name": "七美鄉",
+    "zip_code": 883,
+    "city_id": 20
+  },
+  {
+    "id": 302,
+    "name": "白沙鄉",
+    "zip_code": 884,
+    "city_id": 20
+  },
+  {
+    "id": 303,
+    "name": "湖西鄉",
+    "zip_code": 885,
+    "city_id": 20
+  },
+  {
+    "id": 304,
+    "name": "金沙鎮",
+    "zip_code": 890,
+    "city_id": 21
+  },
+  {
+    "id": 305,
+    "name": "金湖鎮",
+    "zip_code": 891,
+    "city_id": 21
+  },
+  {
+    "id": 306,
+    "name": "金寧鄉",
+    "zip_code": 892,
+    "city_id": 21
+  },
+  {
+    "id": 307,
+    "name": "金城鎮",
+    "zip_code": 893,
+    "city_id": 21
+  },
+  {
+    "id": 308,
+    "name": "烈嶼鄉",
+    "zip_code": 894,
+    "city_id": 21
+  },
+  {
+    "id": 309,
+    "name": "烏坵鄉",
+    "zip_code": 896,
+    "city_id": 21
+  },
+  {
+    "id": 310,
+    "name": "屏東市",
+    "zip_code": 900,
+    "city_id": 22
+  },
+  {
+    "id": 311,
+    "name": "三地門鄉",
+    "zip_code": 901,
+    "city_id": 22
+  },
+  {
+    "id": 312,
+    "name": "霧台鄉",
+    "zip_code": 902,
+    "city_id": 22
+  },
+  {
+    "id": 313,
+    "name": "瑪家鄉",
+    "zip_code": 903,
+    "city_id": 22
+  },
+  {
+    "id": 314,
+    "name": "九如鄉",
+    "zip_code": 904,
+    "city_id": 22
+  },
+  {
+    "id": 315,
+    "name": "里港鄉",
+    "zip_code": 905,
+    "city_id": 22
+  },
+  {
+    "id": 316,
+    "name": "高樹鄉",
+    "zip_code": 906,
+    "city_id": 22
+  },
+  {
+    "id": 317,
+    "name": "鹽埔鄉",
+    "zip_code": 907,
+    "city_id": 22
+  },
+  {
+    "id": 318,
+    "name": "長治鄉",
+    "zip_code": 908,
+    "city_id": 22
+  },
+  {
+    "id": 319,
+    "name": "麟洛鄉",
+    "zip_code": 909,
+    "city_id": 22
+  },
+  {
+    "id": 320,
+    "name": "竹田鄉",
+    "zip_code": 911,
+    "city_id": 22
+  },
+  {
+    "id": 321,
+    "name": "內埔鄉",
+    "zip_code": 912,
+    "city_id": 22
+  },
+  {
+    "id": 322,
+    "name": "萬丹鄉",
+    "zip_code": 913,
+    "city_id": 22
+  },
+  {
+    "id": 323,
+    "name": "潮州鎮",
+    "zip_code": 920,
+    "city_id": 22
+  },
+  {
+    "id": 324,
+    "name": "泰武鄉",
+    "zip_code": 921,
+    "city_id": 22
+  },
+  {
+    "id": 325,
+    "name": "來義鄉",
+    "zip_code": 922,
+    "city_id": 22
+  },
+  {
+    "id": 326,
+    "name": "萬巒鄉",
+    "zip_code": 923,
+    "city_id": 22
+  },
+  {
+    "id": 327,
+    "name": "崁頂鄉",
+    "zip_code": 924,
+    "city_id": 22
+  },
+  {
+    "id": 328,
+    "name": "新埤鄉",
+    "zip_code": 925,
+    "city_id": 22
+  },
+  {
+    "id": 329,
+    "name": "南州鄉",
+    "zip_code": 926,
+    "city_id": 22
+  },
+  {
+    "id": 330,
+    "name": "林邊鄉",
+    "zip_code": 927,
+    "city_id": 22
+  },
+  {
+    "id": 331,
+    "name": "東港鎮",
+    "zip_code": 928,
+    "city_id": 22
+  },
+  {
+    "id": 332,
+    "name": "琉球鄉",
+    "zip_code": 929,
+    "city_id": 22
+  },
+  {
+    "id": 333,
+    "name": "佳冬鄉",
+    "zip_code": 931,
+    "city_id": 22
+  },
+  {
+    "id": 334,
+    "name": "新園鄉",
+    "zip_code": 932,
+    "city_id": 22
+  },
+  {
+    "id": 335,
+    "name": "枋寮鄉",
+    "zip_code": 940,
+    "city_id": 22
+  },
+  {
+    "id": 336,
+    "name": "枋山鄉",
+    "zip_code": 941,
+    "city_id": 22
+  },
+  {
+    "id": 337,
+    "name": "春日鄉",
+    "zip_code": 942,
+    "city_id": 22
+  },
+  {
+    "id": 338,
+    "name": "獅子鄉",
+    "zip_code": 943,
+    "city_id": 22
+  },
+  {
+    "id": 339,
+    "name": "車城鄉",
+    "zip_code": 944,
+    "city_id": 22
+  },
+  {
+    "id": 340,
+    "name": "牡丹鄉",
+    "zip_code": 945,
+    "city_id": 22
+  },
+  {
+    "id": 341,
+    "name": "恆春鎮",
+    "zip_code": 946,
+    "city_id": 22
+  },
+  {
+    "id": 342,
+    "name": "滿州鄉",
+    "zip_code": 947,
+    "city_id": 22
+  },
+  {
+    "id": 343,
+    "name": "台東市",
+    "zip_code": 950,
+    "city_id": 23
+  },
+  {
+    "id": 344,
+    "name": "綠島鄉",
+    "zip_code": 951,
+    "city_id": 23
+  },
+  {
+    "id": 345,
+    "name": "蘭嶼鄉",
+    "zip_code": 952,
+    "city_id": 23
+  },
+  {
+    "id": 346,
+    "name": "延平鄉",
+    "zip_code": 953,
+    "city_id": 23
+  },
+  {
+    "id": 347,
+    "name": "卑南鄉",
+    "zip_code": 954,
+    "city_id": 23
+  },
+  {
+    "id": 348,
+    "name": "鹿野鄉",
+    "zip_code": 955,
+    "city_id": 23
+  },
+  {
+    "id": 349,
+    "name": "關山鎮",
+    "zip_code": 956,
+    "city_id": 23
+  },
+  {
+    "id": 350,
+    "name": "海端鄉",
+    "zip_code": 957,
+    "city_id": 23
+  },
+  {
+    "id": 351,
+    "name": "池上鄉",
+    "zip_code": 958,
+    "city_id": 23
+  },
+  {
+    "id": 352,
+    "name": "東河鄉",
+    "zip_code": 959,
+    "city_id": 23
+  },
+  {
+    "id": 353,
+    "name": "成功鎮",
+    "zip_code": 961,
+    "city_id": 23
+  },
+  {
+    "id": 354,
+    "name": "長濱鄉",
+    "zip_code": 962,
+    "city_id": 23
+  },
+  {
+    "id": 355,
+    "name": "太麻里鄉",
+    "zip_code": 963,
+    "city_id": 23
+  },
+  {
+    "id": 356,
+    "name": "金峰鄉",
+    "zip_code": 964,
+    "city_id": 23
+  },
+  {
+    "id": 357,
+    "name": "大武鄉",
+    "zip_code": 965,
+    "city_id": 23
+  },
+  {
+    "id": 358,
+    "name": "達仁鄉",
+    "zip_code": 966,
+    "city_id": 23
+  },
+  {
+    "id": 359,
+    "name": "花蓮市",
+    "zip_code": 970,
+    "city_id": 24
+  },
+  {
+    "id": 360,
+    "name": "新城鄉",
+    "zip_code": 971,
+    "city_id": 24
+  },
+  {
+    "id": 361,
+    "name": "秀林鄉",
+    "zip_code": 972,
+    "city_id": 24
+  },
+  {
+    "id": 362,
+    "name": "吉安鄉",
+    "zip_code": 973,
+    "city_id": 24
+  },
+  {
+    "id": 363,
+    "name": "壽豐鄉",
+    "zip_code": 974,
+    "city_id": 24
+  },
+  {
+    "id": 364,
+    "name": "鳳林鎮",
+    "zip_code": 975,
+    "city_id": 24
+  },
+  {
+    "id": 365,
+    "name": "光復鄉",
+    "zip_code": 976,
+    "city_id": 24
+  },
+  {
+    "id": 366,
+    "name": "豐濱鄉",
+    "zip_code": 977,
+    "city_id": 24
+  },
+  {
+    "id": 367,
+    "name": "瑞穗鄉",
+    "zip_code": 978,
+    "city_id": 24
+  },
+  {
+    "id": 368,
+    "name": "萬榮鄉",
+    "zip_code": 979,
+    "city_id": 24
+  },
+  {
+    "id": 369,
+    "name": "玉里鎮",
+    "zip_code": 981,
+    "city_id": 24
+  },
+  {
+    "id": 370,
+    "name": "卓溪鄉",
+    "zip_code": 982,
+    "city_id": 24
+  },
+  {
+    "id": 371,
+    "name": "富里鄉",
+    "zip_code": 983,
+    "city_id": 24
+  }
+]

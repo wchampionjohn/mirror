@@ -1,0 +1,249 @@
+<%= simple_form_for(
+[:admin, current_object],
+wrapper: :store_form,
+html: { class: 'm-form m-form--label-align-left- m-form--state-'}) do |f| %>
+<input type="hidden" name="next_step" value="<%= current_object.new_record? ? '2' : '1' %>">
+<div class="m-wizard__form-step m-wizard__form-step--current" id="m_wizard_form_step_1">
+  <div class="row">
+    <div class="col-xl-8 offset-xl-2">
+      <div class="m-form__section m-form__section--first">
+        <div class="m-form__heading">
+          <h3 class="m-form__heading-title">
+            <i class="la la-home"></i>
+            基本資訊
+          </h3>
+        </div>
+        <%= f.input :name %>
+        <%= f.association :city,
+        include_blank: '請選擇縣市'
+        %>
+        <%= f.association :area,
+        include_blank: '請選擇行政區',
+        collection: @area_options
+        %>
+        <%= f.input :address %>
+        <%= f.input :commission, wrapper: :store_input_group do %>
+        <span class="input-group-addon"><i class="la la la-money"></i></span>
+        <%= f.input_field :commission, class: "form-control" %>
+        <% end %>
+
+        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+        <div class="m-form__heading">
+          <h3 class="m-form__heading-title">
+            <i class="la la-info-circle"></i>
+            聯絡資訊
+          </h3>
+        </div>
+        <%= f.input :contact_name %>
+        <%= f.input :contact_phone_number, wrapper: :store_input_group do %>
+        <span class="input-group-addon"><i class="la la-phone"></i></span>
+        <%= f.input_field :contact_phone_number, class: "form-control" %>
+        <% end %>
+
+        <%= f.input :email, wrapper: :store_input_group do %>
+        <span class="input-group-addon"><i class="la la-envelope"></i></span>
+        <%= f.input_field :email, class: "form-control" %>
+        <% end %>
+
+        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+        <div class="m-form__heading">
+          <h3 class="m-form__heading-title">
+            <i class="la la-users"></i>
+            客群
+          </h3>
+        </div>
+        <%= f.input :gender,
+        include_blank: '',
+        label_method: :last,
+        value_method: :first,
+        collection: current_object.class.human_attribute_enum('gender') %>
+        <%= f.association :age_groups,
+        collection: AgeGroup.options(include_blank: false, text_column: :group),
+        input_html: {class: 'form-control m-select2', multiple: "multiple" } %>
+
+        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+        <div class="m-form__heading">
+          <h3 class="m-form__heading-title">
+            <i class="la la-history"></i>
+            營業時間
+          </h3>
+        </div>
+
+        <div class="form-group m-form__group row">
+          <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand mt-2">
+            <input type="checkbox" id="checkall-business-hours">
+            <span></span>
+          </label>
+          <label class="col-xl-2 col-lg-2 col-form-label" for="checkall-business-hours">
+            All
+          </label>
+          <div class="col-xl-3 col-lg-3">
+            <div class="input-group timepicker">
+              <span class="input-group-addon">
+                <i class="la la-clock-o"></i>
+              </span>
+              <input id="all-start-time" type="text" class="form-control m-input timepicker timepicker-no-seconds" value="12:00">
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3">
+            <div class="input-group timepicker">
+              <span class="input-group-addon">
+                <i class="la la-clock-o"></i>
+              </span>
+              <input id="all-end-time" type="text" class="form-control m-input timepicker timepicker-no-seconds" value="12:00">
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3">
+          </div>
+        </div>
+
+        <%= f.simple_fields_for :business_hours do |c| %>
+        <%= c.input_field :day, as: :hidden %>
+        <div class="form-group m-form__group row">
+          <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand mt-2">
+            <%= c.check_box :is_openness,
+            as: :boolean,
+            class: "is_openness",
+            "data-index" => c.index,
+            value: (c.object.is_openness?) %>
+            <span></span>
+          </label>
+          <label class="col-xl-2 col-lg-2 col-form-label" for="store_business_hours_attributes_<%= c.index %>_is_openness">
+            <%= Store::BusinessHour.human_attribute_enum('day')[c.object.day] %>:
+          </label>
+          <div class="col-xl-3 col-lg-3">
+            <div class="input-group timepicker">
+              <span class="input-group-addon">
+                <i class="la la-clock-o"></i>
+              </span>
+              <%= c.input_field :start_time,
+              placeholder: 'Open time',
+              value: c.object.start_time.strftime("%I:%M%p"),
+              as: :string,
+              disabled: !c.object.is_openness,
+              class: 'form-control m-input timepicker timepicker-no-seconds start-time-input'
+              %>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3">
+            <div class="input-group timepicker">
+              <span class="input-group-addon">
+                <i class="la la-clock-o"></i>
+              </span>
+              <%= c.input_field :end_time,
+              value: c.object.end_time.strftime("%I:%M%p"),
+              placeholder: 'Close time',
+              as: :string,
+              disabled: !c.object.is_openness,
+              class: 'form-control m-input timepicker timepicker-no-seconds end-time-input'
+              %>
+            </div>
+            <%= c.error :end_time %>
+          </div>
+
+          <div class="col-xl-3 col-lg-3">
+            <% unless c.object.monday? %>
+            <a class="btn btn-outline-brand m-btn m-btn--icon m-btn--outline copy-pervious" data-index="<%= c.index %>" href="javascript:void(0)">
+              <span>
+                <i class="la la-history"></i>
+                <span>Repeat time</span>
+              </span>
+            </a>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div> <!--End row -->
+</div>
+
+<%= render partial: 'footer' %>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+  $('.timepicker-no-seconds').timepicker({
+    autoclose: true,
+    minuteStep: 5,
+    defaultTime: false
+  });
+
+  $('.copy-pervious').click(function(){
+    var index = $(this).data('index');
+    var perviousIndex = index - 1;
+    var perviousStartTime = $("#store_business_hours_attributes_" + perviousIndex + "_start_time").val();
+    var perviousEndTime = $("#store_business_hours_attributes_" + perviousIndex + "_end_time").val();
+    $("#store_business_hours_attributes_" + index + "_start_time").val(perviousStartTime)
+    $("#store_business_hours_attributes_" + index + "_end_time").val(perviousEndTime)
+  })
+
+  $(".is_openness").click(function(){
+    var index = $(this).data('index');
+    var startTime = $("#store_business_hours_attributes_" + index + "_start_time")
+    var endTime = $("#store_business_hours_attributes_" + index + "_end_time")
+    if($(this).is(':checked')) {
+      startTime.prop('disabled', false);
+      endTime.prop('disabled', false);
+    }else {
+      startTime.prop('disabled', true);
+      endTime.prop('disabled', true);
+    }
+  })
+
+  $("#checkall-business-hours").change(function(){
+    if ($(this).is(':checked')) {
+      $('.is_openness').prop('checked',true);
+      $('.start-time-input').prop('disabled', false);
+      $('.end-time-input').prop('disabled', false);
+    } else {
+      $('.is_openness').prop('checked', false);
+      $('.start-time-input').prop('disabled',true);
+      $('.end-time-input').prop('disabled',true);
+    }
+  });
+
+  $("#all-start-time").change(function(){
+    var time = $(this).val();
+
+    $('.start-time-input').each( function( key, input ) {
+      if (!$(input).is(':disabled')) {
+        $(input).val(time);
+      }
+    });
+  });
+
+  $("#all-end-time").change(function(){
+    var time = $(this).val();
+
+    $('.end-time-input').each( function( key, input ) {
+      if (!$(input).is(':disabled')) {
+        $(input).val(time);
+      }
+    });
+  });
+
+  $("#store_is_enable_story_ads").change(function(){
+    if($(this).prop("checked")) {
+      $(".store_story_frequency").show();
+    } else {
+      $(".store_story_frequency").hide();
+    }
+  })
+    $("#store_city_id").change(function(){
+      var cityId = $(this).val();
+      var areaSelect = $("#store_area_id");
+
+      $.ajax({
+        url: "/cities/" + cityId + "/areas"
+      }).done(function(result) {
+        console.log(result)
+        areaSelect.html('');
+         $.each(result.data, function (index, area) {
+              areaSelect.append('<option value="' + area[1] + '">' + area[0] + '</option>');
+           });
+      });
+    });
+
+
+  $(".m-select2").select2();
+</script>

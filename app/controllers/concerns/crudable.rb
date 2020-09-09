@@ -49,13 +49,7 @@ module Crudable
   end
 
   def update
-    update_method = if model_class.try(:devise_modules?) && object_params[:password].blank?
-                      'update_without_password'
-                    else
-                      'update'
-                    end
-
-    if current_object.send(update_method, object_params)
+    if current_object.update object_params
       redirect_to action_after_update, :flash => {:success => '已完成修改'}
     else
       flash[:alert] = '修改時發生以下錯誤，請修正後再重新嘗試'

@@ -14,13 +14,16 @@
           <div class="form-group m-form__group row">
             <%= f.input :name,
             wrapper_html: { class: 'col-lg-6 col-md-9 col-sm-12' },
-            label: label_with_icon("設備名稱", "flaticon-settings") %>
+            label: label_with_icon("設備名稱", "la la-television") %>
             <%= f.input :mac,
             wrapper_html: { class: 'col-lg-6 col-md-9 col-sm-12' },
-            label: label_with_icon("MAC", "flaticon-interface-2") %>
+            label: label_with_icon("MAC", "la la-database") %>
           </div>
 
           <div class="form-group m-form__group row">
+            <%= f.association :store,
+            wrapper_html: { class: 'col-lg-6 col-md-9 col-sm-12' },
+            label: label_with_icon("店家", "la la-home") %>
             <div class="col-lg-6 col-md-9 col-sm-12">
               <label>
                 <i class="la la-warning"></i>
@@ -40,7 +43,7 @@
           <div class="form-group m-form__group row">
             <div class="col-lg-6 col-md-9 col-sm-12">
               <label>
-                <i class="la la-warning"></i>
+                <i class="la la-clock-o"></i>
                 設備最後回報時間
               </label>
               <div class="col-lg-6 col-md-9 col-sm-12">
@@ -53,7 +56,7 @@
           <div class="form-group m-form__group row">
             <%= f.input :note,
             wrapper_html: { class: 'col-lg-12 col-md-12 col-sm-12' },
-            label: label_with_icon("備註", "flaticon-squares-4") %>
+            label: label_with_icon("備註", "la la-sticky-note") %>
           </div>
 
         </div>

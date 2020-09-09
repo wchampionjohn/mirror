@@ -1,0 +1,148 @@
+[
+  {
+    "id": 1,
+    "name": "台北市",
+    "position": 1,
+    "available": 1
+  },
+  {
+    "id": 2,
+    "name": "基隆市",
+    "position": 3,
+    "available": 1
+  },
+  {
+    "id": 3,
+    "name": "新北市",
+    "position": 2,
+    "available": 1
+  },
+  {
+    "id": 4,
+    "name": "連江縣",
+    "position": 99,
+    "available": 0
+  },
+  {
+    "id": 5,
+    "name": "宜蘭縣",
+    "position": 99,
+    "available": 1
+  },
+  {
+    "id": 6,
+    "name": "釣魚台",
+    "position": 99,
+    "available": 0
+
+  },
+  {
+    "id": 7,
+    "name": "新竹市",
+    "position": 9,
+    "available": 1
+  },
+  {
+    "id": 8,
+    "name": "新竹縣",
+    "position": 8,
+    "available": 1
+  },
+  {
+    "id": 9,
+    "name": "桃園市",
+    "position": 4,
+    "position": 7,
+    "available": 1
+  },
+  {
+    "id": 10,
+    "name": "苗栗縣",
+    "position": 99,
+    "available": 1
+  },
+  {
+    "id": 11,
+    "name": "台中市",
+    "position": 5,
+    "available": 1
+  },
+  {
+    "id": 12,
+    "name": "彰化縣",
+    "position": 99,
+    "available": 1
+  },
+  {
+    "id": 13,
+    "name": "南投縣",
+    "position": 99,
+    "available": 1
+  },
+  {
+    "id": 14,
+    "name": "嘉義市",
+    "position": 99,
+    "available": 1
+  },
+  {
+    "id": 15,
+    "name": "嘉義縣",
+    "position": 99,
+    "available": 1
+  },
+  {
+    "id": 16,
+    "name": "雲林縣",
+    "position": 99,
+    "available": 1
+  },
+  {
+    "id": 17,
+    "name": "台南市",
+    "position": 7,
+    "available": 1
+  },
+  {
+    "id": 18,
+    "name": "高雄市",
+    "position": 6,
+    "available": 1
+  },
+  {
+    "id": 19,
+    "name": "南海島",
+    "position": 99,
+    "available": 0
+  },
+  {
+    "id": 20,
+    "name": "澎湖縣",
+    "position": 99,
+    "available": 0
+  },
+  {
+    "id": 21,
+    "name": "金門縣",
+    "position": 99,
+    "available": 0
+  },
+  {
+    "id": 22,
+    "name": "屏東縣",
+    "position": 99,
+    "available": 1
+  },
+  {
+    "id": 23,
+    "name": "台東縣",
+    "position": 99,
+    "available": 0
+  },
+  {
+    "id": 24,
+    "name": "花蓮縣",
+    "position": 99,
+    "available": 0
+  }
+]

@@ -1,0 +1,18 @@
+zh-TW:
+  activerecord:
+    models:
+      store: '店家'
+    attributes:
+      store:
+        name: '店家名稱'
+        city: '縣市'
+        area: '行政區'
+        address: '地址'
+        commission: '分潤'
+        gender: '性別'
+        age_groups: '年齡層'
+        contact_name: '聯絡人'
+        contact_phone_number: '聯絡電話'
+      store/gender:
+        male: '男性'
+        female: '女性'
