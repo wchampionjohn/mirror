@@ -1,0 +1,23 @@
+defaults: &defaults
+
+development:
+  <<: *defaults
+  redis_connection:
+    host: "127.0.0.1"
+    port: 6379
+    db: 15
+
+
+test:
+  <<: *defaults
+  redis_connection:
+    host: "127.0.0.1"
+    port: 6379
+    db: 15
+
+production:
+  <<: *defaults
+  redis_connection:
+    host: "127.0.0.1"
+    port: 6379
+    db: 15
