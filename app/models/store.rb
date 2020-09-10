@@ -5,6 +5,7 @@ class Store < ApplicationRecord
   # relationships .............................................................
   belongs_to :city
   belongs_to :area
+  belongs_to :headquarter, counter_cache: true, optional: true
   has_many :age_group_stores
   has_many :age_groups, through: :age_group_stores
   has_many :business_hours, dependent: :destroy
@@ -78,6 +79,10 @@ class Store < ApplicationRecord
 
   def current_step= stage
     @current_step = stage
+  end
+
+  def vaild_commision
+    headquarter.present? ? headquarter.commission : commission
   end
 
   # protected instance methods ................................................

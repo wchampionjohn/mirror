@@ -8,6 +8,7 @@ zh-TW:
         city: '縣市'
         area: '行政區'
         address: '地址'
+        headquarter: '總店'
         commission: '分潤'
         gender: '性別'
         age_groups: '年齡層'

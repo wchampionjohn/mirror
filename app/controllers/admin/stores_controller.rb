@@ -41,7 +41,7 @@ class Admin::StoresController < Admin::AppsController
   end
   def permitted_attributes
     [
-     :name, :address, :area_id, :city_id, :commission,
+     :name, :address, :area_id, :city_id, :headquarter_id, :commission,
      :contact_phone_number, :contact_name, :email, :gender,
      :turn_on_service_menu, :turn_on_information_menu,
      :service_menu_alias, :service_menu_icon,
