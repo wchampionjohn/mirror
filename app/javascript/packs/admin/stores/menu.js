@@ -1,10 +1,10 @@
 import Vue from 'vue/dist/vue.esm';
 
 new Vue({
-  el: '#submitting',
+  el: '#menu',
   data: {
-    services:[],
-    discount_card: '',
+    serviceImages: [],
+    informationImages: [],
     storeId: $('#store_id').val(),
     currentImage: '',
   },
@@ -12,17 +12,18 @@ new Vue({
     this.initDropZone();
   },
   created() {
-    this.fetchContracts();
+    this.fetchImages();
   },
   methods:{
-    fetchContracts(){
+    fetchImages(){
       let self = this;
       $.ajax({
-        url: '/stores/' + self.storeId,
+        url: `/admin/stores/${self.storeId}/introductions`,
         dataType: 'json'
-      }).done(function(result){
-        self.discount_card = result.discount_card
-        self.services = result.services
+      }).done(function(response){
+        response.data.forEach((image) => {
+          self.pushImages(image);
+        });
       })
     },
     initDropZone(){
@@ -32,19 +33,18 @@ new Vue({
 
       var dz = new Dropzone("#m-dropzone-one", {
         maxFiles: 1,
-        url: "/stores/" + self.storeId + "/discounts",
+        url: `/admin/stores/${self.storeId}/introductions?type=information`,
+        acceptedFiles: ".jpg,.png,.jpeg,.gif",
+        maxFilesize: 10, // MB
         addRemoveLinks: true,
         createImageThumbnails: true
       });
 
       dz.on("success", function(file){
         var response  = $.parseJSON(file.xhr.response);
-        var url      = $.parseJSON(response.discount_card_url);
-
+        self.pushImages(response)
         this.removeFile(file);
-
-        toastr.info('uploaded successfully', 'Info');
-        self.discount_card = url
+        toastr.info('上傳成功', 'Info');
       });
 
       dz.on("error", function(file, responseText){
@@ -52,30 +52,29 @@ new Vue({
       });
 
       var dz = new Dropzone("#m-dropzone-two", {
-        url: "/stores/" + this.storeId + "/services",
+        url: `/admin/stores/${self.storeId}/introductions?type=service`,
+        acceptedFiles: ".jpg,.png,.jpeg,.gif",
+        maxFilesize: 10, // MB
         addRemoveLinks: false,
         createImageThumbnails: false
       });
 
       dz.on("success", function(file){
         var response  = $.parseJSON(file.xhr.response);
-        var data      = $.parseJSON(response.service);
-
+        self.pushImages(response)
         this.removeFile(file);
-
-        toastr.info('uploaded successfully', 'Info');
-        self.services.push(data);
+        toastr.info('上傳成功', 'Info');
       });
 
       dz.on("error", function(file, responseText){
         toastr.error(responseText.errors, 'Error');
       });
     },
-    removeAttachment(id) {
+    removeImage(image) {
       let self = this;
 
       swal({
-        title: 'Are you sure delete this file?',
+        title: '確定要刪除此檔案嗎?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Yes',
@@ -85,39 +84,29 @@ new Vue({
         if (isConfirm.value) {
           $.ajax({
             type: "DELETE",
-            url: "/stores/" + self.storeId + "/services/" + id
+            url: `/admin/stores/${self.storeId}/introductions/${image.id}`,
           }).done(function() {
 
-            self.services = self.services.filter(service => service.id !== id)
-            toastr.info('deleted successfully', 'Info');
+            self.removeImages(image);
+            toastr.info('刪除成功', 'Info');
           })
         }
-
       })
 
     },
-    removeDiscountCard(){
-      let self = this;
-
-      swal({
-        title: 'Are you sure delete this file?',
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes',
-        cancelButtonText: 'No'
-      }).then(function (isConfirm) {
-
-        if (isConfirm.value) {
-          $.ajax({
-            type: "DELETE",
-            url: "/stores/" + self.storeId + "/discounts/" + self.storeId
-          }).done(function() {
-            self.discount_card = ""
-            toastr.info('deleted successfully', 'Info');
-          })
-        }
-
-      })
+    pushImages(image){
+      if(image.menu_type == 'information') {
+        this.informationImages.push(image);
+      } else {
+        this.serviceImages.push(image);
+      }
+    },
+    removeImages(image) {
+      if(image.menu_type == 'information'){
+        this.informationImages = this.informationImages.filter(imagre => imagre.id !== image.id)
+      } else {
+        this.serviceImages = this.serviceImages.filter(imagre => imagre.id !== image.id)
+      }
     },
     fillCurrentImage(imageUrl){
       this.currentImage = imageUrl

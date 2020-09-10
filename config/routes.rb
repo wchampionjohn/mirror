@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     end
 
     resources :stores do
+        scope module: :stores do
+          resources :introductions, only: [:index, :create, :destroy]
+        end
     end
 
   end

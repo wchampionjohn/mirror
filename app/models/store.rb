@@ -8,7 +8,7 @@ class Store < ApplicationRecord
   has_many :age_group_stores
   has_many :age_groups, through: :age_group_stores
   has_many :business_hours, dependent: :destroy
-  has_many :introduction_menus, dependent: :destroy
+  has_many :introductions, dependent: :destroy
   # validations ...............................................................
   validates_presence_of :name
   validates :commission, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }
@@ -24,7 +24,7 @@ class Store < ApplicationRecord
 
   DEFAULT_VALUES = {
     commission: 15,
-    inforcharge_menu_icon: 'fas fa-home',
+    information_menu_icon: 'fas fa-home',
     service_menu_icon: 'fas fa-could',
   }
 

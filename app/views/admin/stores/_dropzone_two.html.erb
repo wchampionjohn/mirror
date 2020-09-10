@@ -1,0 +1,54 @@
+<div class="form-group m-form__group row">
+  <label class="col-form-label col-lg-3 col-sm-12">
+    <a href="#" class="m-nav-grid__item"></a>
+    <i class="m-nav-grid__icon fa fa-photo"></i>
+    素材:
+  </label>
+  <div class="col-lg-6 col-md-9 col-sm-12" v-show="informationImages.length < 10">
+    <div class="m-dropzone dropzone" id="m-dropzone-two">
+      <div id="dropzone-uploader" class="m-dropzone__msg dz-message needsclick">
+        <h5>
+          請拖曳檔案或點擊上傳
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-md-9 col-sm-12" v-show="informationImages.length >= 10">
+    <div class="m-alert m-alert--outline alert alert-info alert-dismissible fade show" role="alert">
+      已達允許上傳的最大檔案數
+    </div>
+  </div>
+</div>
+<div class="form-group m-form__group m-form__group--sm row">
+  <label class="col-xl-3 col-lg-3 col-form-label"></label>
+  <div class="col-xl-9 col-lg-9">
+    <span class="m-form__control-static">
+      允許格式: JPG、JPEG、PNG、GIF
+    </span>
+  </div>
+</div>
+<div class="form-group m-form__group m-form__group--sm row">
+  <label class="col-xl-3 col-lg-3 col-form-label"></label>
+  <div class="col-xl-9 col-lg-9">
+    <span class="m-form__control-static">
+      建議尺寸: 1,280 × 720 pixels
+    </span>
+  </div>
+</div>
+<div class="form-group m-form__group m-form__group--sm row">
+  <label class="col-xl-3 col-lg-3 col-form-label"></label>
+  <div class="col-xl-9 col-lg-9">
+    <span class="m-form__control-static">
+      檔案大小限制: 3MB
+    </span>
+  </div>
+</div>
+<div class="form-group m-form__group m-form__group--sm row">
+  <label class="col-xl-3 col-lg-3 col-form-label"></label>
+  <div class="col-xl-9 col-lg-9">
+    <span class="m-form__control-static">
+      檔案數量限制: 10張
+    </span>
+  </div>
+</div>

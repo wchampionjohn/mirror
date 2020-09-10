@@ -1,0 +1,15 @@
+<div class="form-group m-form__group row">
+  <div v-for="(image, index) in informationImages" :key="index" class="col-lg-4 col-md-9 col-sm-12 m--margin-top-10 service">
+    <div class="m-dropzone dropzone" >
+      <img :src="image.attachment_url" height="90" width="120">
+      <div style="margin-top:5px;">
+        <button type="button" class="btn m-btn--pill btn-danger" data-placement="left" data-toggle="modal" v-on:click="fillCurrentImage(image.attachment_url)" data-target="#m_modal">
+          檢視
+        </button>
+      <button type="button" class="btn m-btn--pill btn-danger" data-placement="left"  v-on:click="removeImage(image)">
+        刪除
+      </button>
+      </div>
+    </div>
+  </div>
+</div>
