@@ -4,13 +4,13 @@
   html: { class: 'm-form m-form--label-align-left- m-form--state-'}) do |f| %>
   <%= hidden_field(:store, :id, value: current_object.id) %>
   <%= hidden_field(:store, :is_finish, value: 1) %>
-<div id="submitting">
+<div id="menu">
 <div class="row">
   <div class="col-xl-8 offset-xl-2">
     <div class="m-form__heading">
       <h3 class="m-form__heading-title">
         <i class="la la-desktop"></i>
-        Signage Features
+        店內選單
       </h3>
     </div>
     <!--begin::Section-->
@@ -25,273 +25,71 @@
           2. 服務項目
         </a>
       </li>
-      <li class="nav-item m-tabs__item">
-        <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_form_confirm_3" role="tab">
-          3. 抽獎活動
-        </a>
-      </li>
-      <li class="nav-item m-tabs__item">
-        <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_form_confirm_4" role="tab">
-          4. 問卷調查
-        </a>
-      </li>
     </ul>
     <div class="tab-content m--margin-top-40">
       <div class="tab-pane active" id="m_form_confirm_1" role="tabpanel">
         <div class="m-form__section m-form__section--first">
           <div class="form-group m-form__group row">
             <label class="col-form-label col-lg-3 col-sm-12">
-              Show Features
+              <i class="m-nav-grid__icon la la-lightbulb-o"></i>
+              狀態
             </label>
             <div class="col-lg-4 col-md-9 col-sm-12">
-              <%= f.input :is_show_infomation,
+              <%= f.input :is_information_menu_on,
               label: false,
-              input_html: { 'data-switch': 'true', 'data-on-color': "brand", 'checked': current_object.is_show_infomation == 1 },
+              input_html: { 'data-switch': 'true', 'data-on-color': "brand", 'checked': current_object.is_information_menu_on == 1 },
               as: :boolean %>
             </div>
           </div>
-          <%= f.input :information_text, placeholder: 'must be between 4 and 6 words',
-          label: label_with_icon("Alias in signage", "fa fa-desktop") %>
-          <div class="m-separator m-separator--dashed m-separator--lg"></div>
-          <div v-show="discount_card">
-            <div class="form-group m-form__group row">
-              <label class="col-form-label col-lg-3 col-sm-12">
-                <a href="#" class="m-nav-grid__item"></a>
-                <i class="m-nav-grid__icon fa fa-photo"></i>
-                Discount Cards:
-              </label>
-              <div class="col-lg-6 col-md-9 col-sm-12">
-                <div class="m-dropzone dropzone">
-                  <div id="dropzone-uploader" class="m-dropzone__msg dz-message needsclick">
-                    <div id="uploaded-img">
-                      <img :src="discount_card" height="106" width="120">
-                      <div style="margin-top:10px;">
-                        <button type="button" class="btn m-btn--pill btn-danger" data-placement="left" data-toggle="modal" v-on:click="fillCurrentImage(discount_card)" data-target="#m_modal">
-                          SHOW
-                        </button>
-                        <button type="button" class="btn m-btn--pill btn-danger" data-placement="left" v-on:click="removeDiscountCard()">
-                          <i class="fas fa-trash-alt"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-group m-form__group m-form__group--sm row">
-              <label class="col-xl-3 col-lg-3 col-form-label"></label>
-              <div class="col-xl-9 col-lg-9">
-                <span class="m-form__control-static">
-                  Format: JPG、JPEG、PNG、GIF
-                </span>
-              </div>
-            </div>
-            <div class="form-group m-form__group m-form__group--sm row">
-              <label class="col-xl-3 col-lg-3 col-form-label"></label>
-              <div class="col-xl-9 col-lg-9">
-                <span class="m-form__control-static">
-                  Size: 1,280 × 720 pixels
-                </span>
-              </div>
-            </div>
-            <div class="form-group m-form__group m-form__group--sm row">
-              <label class="col-xl-3 col-lg-3 col-form-label"></label>
-              <div class="col-xl-9 col-lg-9">
-                <span class="m-form__control-static">
-                  Quality: 10MB
-                </span>
-              </div>
-            </div>
-          </div>
-          <div v-show="!discount_card">
-            <div class="form-group m-form__group row">
-              <label class="col-form-label col-lg-3 col-sm-12">
-                <a href="#" class="m-nav-grid__item"></a>
-                <i class="m-nav-grid__icon fa fa-photo"></i>
-                Discount Cards:
-              </label>
-              <div class="col-lg-6 col-md-9 col-sm-12">
 
-                <div class="m-dropzone dropzone " id="m-dropzone-one" >
-                  <div id="dropzone-uploader" class="m-dropzone__msg dz-message needsclick">
-                    <h5>
-                      Drop files here or click to upload.
-                    </h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-group m-form__group m-form__group--sm row">
-              <label class="col-xl-3 col-lg-3 col-form-label"></label>
-              <div class="col-xl-9 col-lg-9">
-                <span class="m-form__control-static">
-                  Format: JPG、JPEG、PNG、GIF
-                </span>
-              </div>
-            </div>
-            <div class="form-group m-form__group m-form__group--sm row">
-              <label class="col-xl-3 col-lg-3 col-form-label"></label>
-              <div class="col-xl-9 col-lg-9">
-                <span class="m-form__control-static">
-                  Size: 1,280 × 720 pixels
-                </span>
-              </div>
-            </div>
-            <div class="form-group m-form__group m-form__group--sm row">
-              <label class="col-xl-3 col-lg-3 col-form-label"></label>
-              <div class="col-xl-9 col-lg-9">
-                <span class="m-form__control-static">
-                  Quality: 10MB
-                </span>
-              </div>
-            </div>
-          </div>
+          <%= f.input :information_menu_icon,
+          collection: @icon_options,
+          input_html: { class: 'form-control m-bootstrap-select m_selectpicker'},
+          label: label_with_icon("Icon", "la la-tag") %>
+
+          <%= f.input :information_menu_alias,
+          laceholder: '預設為"店家資訊"，如無需更變請保持空白',
+          label: label_with_icon("標題", "la la-comment") %>
+
+          <div class="m-separator m-separator--dashed m-separator--lg"></div>
+          <%= render partial: 'dropzone_one' %>
+          <div class="m-separator m-separator--dashed m-separator--lg"></div>
+          <%= render partial: 'information_images' %>
+
         </div> <!--End section first -->
       </div> <!--End m_form_confirm_1 -->
       <div class="tab-pane" id="m_form_confirm_2" role="tabpanel">
         <div class="form-group m-form__group row">
-          <label class="col-form-label col-lg-3 col-sm-12">
-            Show Features
-          </label>
+            <label class="col-form-label col-lg-3 col-sm-12">
+              <i class="m-nav-grid__icon la la-lightbulb-o"></i>
+              狀態
+            </label>
           <div class="col-lg-4 col-md-9 col-sm-12">
-            <%= f.input :is_show_services,
+            <%= f.input :is_service_menu_on,
             label: false,
-            input_html: { 'data-switch': 'true', 'data-on-color': "brand", 'checked': current_object.is_show_services == 1 },
+            input_html: { 'data-switch': 'true', 'data-on-color': "brand", 'checked': current_object.is_service_menu_on == 1 },
             as: :boolean %>
           </div>
         </div>
-        <%= f.input :service_text,label: label_with_icon("Alias in signage", "fa fa-desktop") %>
+
+        <%= f.input :service_menu_icon,
+            collection: @icon_options,
+            input_html: { class: 'form-control m-bootstrap-select m_selectpicker'},
+            label: label_with_icon("Icon", "la la-tag") %>
+        <%= f.input :service_menu_alias, placeholder: '預設為"服務項目"，如無需更變請保持空白',
+          label: label_with_icon("標題", "la la-comment") %>
         <div class="m-separator m-separator--dashed m-separator--lg"></div>
-        <div class="m-form__heading">
-          <h4 class="m-form__heading-title">
-            <i class="m-nav-grid__icon fa fa-photo"></i>
-            Services menu
-          </h4>
-        </div>
+        <%= render partial: 'dropzone_two' %>
+        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+        <%= render partial: 'service_images' %>
 
-        <div class="form-group m-form__group row">
-          <div v-for="(service, index) in services" :key="index" class="col-lg-4 col-md-9 col-sm-12 m--margin-top-10 service">
-            <div class="m-dropzone dropzone" >
-              <img :src="service.attachment_url" height="106" width="120">
-              <div style="margin-top:5px;">
-                <button type="button" class="btn m-btn--pill btn-danger" data-placement="left" data-toggle="modal" v-on:click="fillCurrentImage(service.attachment_url)" data-target="#m_modal">
-                  SHOW
-                </button>
-                <button type="button" class="btn m-btn--pill btn-danger" data-placement="left"  v-on:click="removeAttachment(service.id)">
-                  <i class="fa fa-trash-o"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div v-show="services.length < 10">
-          <div class="form-group m-form__group row">
-            <div class="col-lg-4 col-md-9 col-sm-12">
-              <div class="m-dropzone dropzone" id="m-dropzone-two">
-                <div class="m-dropzone__msg dz-message needsclick">
-                  <h5>
-                    Drop files here or click to upload.
-                  </h5>
-                </div>
-              </div>
-            </div>
-          </div><!--End -->
-          <div class="form-group m-form__group m-form__group--sm row">
-            <div class="col-xl-9 col-lg-9">
-              <span class="m-form__control-static">
-                Format: JPG、JPEG、PNG、GIF
-              </span>
-            </div>
-          </div>
-          <div class="form-group m-form__group m-form__group--sm row">
-            <div class="col-xl-9 col-lg-9">
-              <span class="m-form__control-static">
-                Size: 1,280 × 720 pixels
-              </span>
-            </div>
-          </div>
-          <div class="form-group m-form__group m-form__group--sm row">
-            <div class="col-xl-9 col-lg-9">
-              <span class="m-form__control-static">
-                Quality: 10MB
-              </span>
-            </div>
-          </div>
-        </div>
       </div> <!--End cofirm_2-->
-      <div class="tab-pane" id="m_form_confirm_3" role="tabpanel">
-        <div class="form-group m-form__group row">
-          <label class="col-form-label col-lg-3 col-sm-12">
-            Show Features
-          </label>
-          <div class="col-lg-4 col-md-9 col-sm-12">
-            <input data-switch="true" type="checkbox" data-on-color="brand" disabled id="m_notify_pause">
-          </div>
-        </div>
-        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+    </div>
+  </div>
+</div>
 
-        <div class="form-group m-form__group row">
-          <div class="col-lg-12">
-            <h4>
-              <i class="fa fa-bullhorn"></i>
-              Coming soon
-            </h4>
-          </div>
-        </div>
-      </div>
-      <div class="tab-pane" id="m_form_confirm_4" role="tabpanel">
-        <div class="form-group m-form__group row">
-          <label class="col-form-label col-lg-3 col-sm-12">
-            Show Features
-          </label>
-          <div class="col-lg-4 col-md-9 col-sm-12">
-            <input data-switch="true" type="checkbox" data-on-color="brand" disabled id="m_notify_pause">
-          </div>
-        </div>
-        <div class="m-separator m-separator--dashed m-separator--lg"></div>
-        <div class="form-group m-form__group row">
-          <div class="col-lg-12">
-            <h4>
-              <i class="fa fa-bullhorn"></i>
-              Coming soon
-            </h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="m-portlet__foot m-portlet__foot--fit m--margin-top-40">
-  <div class="m-form__actions">
-    <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-4 m--align-left">
-      <%= link_to(second_step_path(current_object), class: 'btn btn-secondary m-btn m-btn--custom m-btn--icon') do %>
-      <span>
-        <i class="la la-arrow-left"></i>
-        &nbsp;&nbsp;
-        <span>
-          Back
-        </span>
-      </span>
-      <% end %>
-    </div>
-      <div class="col-lg-4 m--align-right">
-        <%= button_tag(type: 'submit', class: "btn btn-primary m-btn m-btn--custom m-btn--icon") do %>
-          <span>
-            <i class="la la-check"></i>
-            &nbsp;&nbsp;
-            <span>
-              Submit
-            </span>
-          </span>
-          <% end %>
-      </div>
-      <div class="col-lg-2"></div>
-    </div>
-  </div>
-</div>
+<%= render partial: 'footer' %>
+
 <div class="modal fade" id="m_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -311,7 +109,7 @@
 </div>
 <% end %>
 
-<%= javascript_pack_tag "#{ request.params['controller'] }/submitting" %>
+<%= javascript_pack_tag "#{ request.params['controller'] }/menu" %>
 
 <script type="text/javascript" charset="utf-8">
   $('[data-switch=true]').bootstrapSwitch();

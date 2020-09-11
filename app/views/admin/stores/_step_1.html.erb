@@ -22,9 +22,10 @@ html: { class: 'm-form m-form--label-align-left- m-form--state-'}) do |f| %>
         collection: @area_options
         %>
         <%= f.input :address %>
+        <%= f.association :headquarter, hint: '單點店家請保留白' %>
         <%= f.input :commission, wrapper: :store_input_group do %>
-        <span class="input-group-addon"><i class="la la la-money"></i></span>
-        <%= f.input_field :commission, class: "form-control" %>
+          <span class="input-group-addon"><i class="la la la-money"></i></span>
+          <%= content_tag(:p, current_object.commission.to_s, class: "form-control static") %>
         <% end %>
 
         <div class="m-separator m-separator--dashed m-separator--lg"></div>

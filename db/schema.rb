@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_08_071618) do
+ActiveRecord::Schema.define(version: 2020_09_10_094931) do
 
   create_table "age_group_stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "age_group_id"
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 2020_09_08_071618) do
     t.index ["store_id"], name: "index_devices_on_store_id"
   end
 
+  create_table "headquarters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "stores_count"
+    t.string "name"
+    t.integer "commission"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "store_business_hours", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "day", limit: 2
     t.boolean "is_openness"
@@ -65,6 +73,15 @@ ActiveRecord::Schema.define(version: 2020_09_08_071618) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["is_openness"], name: "index_store_business_hours_on_is_openness"
     t.index ["store_id"], name: "index_store_business_hours_on_store_id"
+  end
+
+  create_table "store_introductions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "store_id"
+    t.integer "menu_type", limit: 2
+    t.string "attachment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_store_introductions_on_store_id"
   end
 
   create_table "stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -82,9 +99,17 @@ ActiveRecord::Schema.define(version: 2020_09_08_071618) do
     t.string "note"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_information_menu_on"
+    t.boolean "is_service_menu_on"
+    t.string "information_menu_alias"
+    t.string "service_menu_alias"
+    t.string "information_menu_icon"
+    t.string "service_menu_icon"
+    t.integer "headquarter_id"
     t.index ["area_id"], name: "index_stores_on_area_id"
     t.index ["city_id"], name: "index_stores_on_city_id"
     t.index ["gender"], name: "index_stores_on_gender"
+    t.index ["headquarter_id"], name: "index_stores_on_headquarter_id"
   end
 
 end
