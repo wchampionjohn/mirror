@@ -24,4 +24,16 @@ namespace :seed_data do
     age_groups = JSON.parse(File.read("#{file_dir}/age_groups.json"))
     age_groups.each { |group| AgeGroup.create! group }
   end
+
+  task ad_categories: :environment do
+    file_dir = Rails.root.join('data', 'seeds').to_s
+    rows = YAML.load(File.open(Rails.root.join("#{file_dir}/ad_categories.yml")))
+    rows.each do |category_name, items|
+      category = Ad::Category.find_or_create_by name: category_name
+      items.each do |item|
+        category.items.create! name: item
+      end
+    end
+  end
+
 end

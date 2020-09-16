@@ -68,7 +68,7 @@ SimpleForm.setup do |config|
     b.use :label
 
     b.use :input, class: 'form-control'
-    b.use :hint,  wrap_with: { tag: 'span', class: 'm--font-metal' }
+    b.use :hint,  wrap_with: { tag: 'span', class: 'm-form__help' }
     b.use :error, wrap_with: { tag: 'p', class: 'm-form__help m--font-danger' }
   end
 
@@ -82,7 +82,7 @@ SimpleForm.setup do |config|
     b.use :label, class: 'form-control-label'
 
     b.use :input, class: 'form-control'
-    b.use :hint,  wrap_with: { tag: 'span', class: 'm--font-metal' }
+    b.use :hint,  wrap_with: { tag: 'span', class: 'm-form__help' }
     b.use :error, wrap_with: { tag: 'p', class: 'm-form__help m--font-danger' }
   end
 

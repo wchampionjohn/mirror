@@ -35,6 +35,7 @@ html: { class: 'm-form m-form--label-align-left- m-form--state-'}) do |f| %>
             聯絡資訊
           </h3>
         </div>
+
         <%= f.input :contact_name %>
         <%= f.input :contact_phone_number, wrapper: :store_input_group do %>
         <span class="input-group-addon"><i class="la la-phone"></i></span>
@@ -244,7 +245,6 @@ html: { class: 'm-form m-form--label-align-left- m-form--state-'}) do |f| %>
            });
       });
     });
-
 
   $(".m-select2").select2();
 </script>

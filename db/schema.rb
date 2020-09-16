@@ -10,7 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_10_094931) do
+ActiveRecord::Schema.define(version: 2020_09_16_032343) do
+
+  create_table "ad_age_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "age_group_id"
+    t.integer "ad_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ad_id"], name: "index_ad_age_groups_on_ad_id"
+    t.index ["age_group_id"], name: "index_ad_age_groups_on_age_group_id"
+  end
+
+  create_table "ad_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "ad_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ad_category_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "ad_id"
+    t.integer "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "status"
+    t.integer "seconds"
+    t.date "start_at"
+    t.date "end_at"
+    t.string "material"
+    t.string "banner"
+    t.integer "category_id"
+    t.integer "category_item_id"
+    t.integer "advertiser_id"
+    t.decimal "budget", precision: 10, scale: 2
+    t.integer "ad_type", limit: 2
+    t.integer "gender", limit: 2
+    t.string "scanning_link"
+    t.decimal "cpv", precision: 10, scale: 2
+    t.decimal "cpm", precision: 10, scale: 2
+    t.integer "impressions"
+    t.integer "views"
+    t.integer "viewers", comment: "可以辨識出人臉數據的觀看者"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "screenshot"
+    t.index ["ad_type"], name: "index_ads_on_ad_type"
+    t.index ["end_at"], name: "index_ads_on_end_at"
+    t.index ["gender"], name: "index_ads_on_gender"
+    t.index ["start_at"], name: "index_ads_on_start_at"
+    t.index ["status"], name: "index_ads_on_status"
+  end
+
+  create_table "advertisers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "age_group_stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "age_group_id"

@@ -2,16 +2,21 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :admin do
     root 'admin/index#index'
-    resources :devices do
-    end
+    resources :devices
 
     resources :stores do
-        scope module: :stores do
-          resources :introductions, only: [:index, :create, :destroy]
-        end
+      scope module: :stores do
+        resources :introductions, only: [:index, :create, :destroy]
+      end
     end
 
+    resources :ads do
+      scope module: :ads do
+        resources :files, only: [:create]
+      end
+    end
   end
+
   resources :cities, only:[] do
     scope module: :cities do
       member do

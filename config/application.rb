@@ -11,6 +11,7 @@ module Mirror
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(services)
     config.autoload_paths += %W(serializers)
     config.autoload_paths += %W(validators)
 

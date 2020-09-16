@@ -1,0 +1,17 @@
+zh-TW:
+  activerecord:
+    models:
+      ad: '廣告'
+    attributes:
+      ad:
+        name: '名稱'
+        gender: '性別'
+        age_groups: '年齡'
+        ad_type: '播放方式'
+      ad/gender:
+        male: '男性'
+        female: '女性'
+      ad/ad_type:
+        carousel: '輪播'
+        precise: '精準'
+        reserve: '墊檔'

@@ -1,0 +1,142 @@
+<div class="form-group m-form__group row">
+  <%= f.input :name,
+  wrapper_html: { class: 'col-lg-6 col-md-9 col-sm-12' },
+  label: label_with_icon("名稱", "flaticon-tea-cup") %>
+
+  <% unless current_object.new_record? %>
+  <div class="string optional ad_name col-lg-6 col-md-9 col-sm-12">
+    <%= f.label :atatus,
+    label: label_with_icon("狀態", "flaticon-layers") %>
+    <div class="col-md-4">
+      <p class="form-control-static">
+        <span class="text-info"> 待審核 </span>
+      </p>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="form-group m-form__group row">
+  <%= f.association :category,
+  include_blank: current_object.new_record? ? '請選擇產業類別' : false,
+  wrapper_html: { class: 'col-lg-3 col-md-9 col-sm-12' },
+  label: label_with_icon("產業類別", "flaticon-delete") %>
+  <%= f.association :category_item,
+  include_blank: '請先選擇產業類別',
+  wrapper_html: { class: 'col-lg-3 col-md-9 col-sm-12' },
+  collection: current_category_items,
+  label: label_with_icon("細項", "flaticon-delete") %>
+  <%= f.input :seconds,
+  wrapper_html: { class: 'col-lg-6 col-md-9 col-sm-12' },
+  label: label_with_icon("秒數", "flaticon-clock") %>
+</div>
+<div class="form-group m-form__group row">
+  <div class="col-lg-6 col-md-9 col-sm-12">
+    <%= f.label :advertiser, advertiser_created_ckbox(f) %>
+    <%= f.association :advertiser, label: false, wrapper: false, class: "form-control" %>
+    <%= f.input_field :advertiser_name, class: "form-control d-none", placeholder: "請輸入代理商名稱" %>
+  </div>
+</div>
+
+<div class="form-group m-form__group row">
+  <%= f.input :ad_type,
+  include_blank: false,
+  label_method: :last,
+  value_method: :first,
+  wrapper_html: { class: 'col-lg-6 col-md-9 col-sm-12' },
+  label: label_with_icon('播放方式', 'flaticon-interface-8'),
+  collection: current_object.class.human_attribute_enum('ad_type') %>
+  <%= f.input :start_at,
+  as: :string,
+  wrapper_html: { class: 'col-lg-3' },
+  input_html: { class: 'date-picker', 'data-date-format' => 'yyyy-mm-dd' },
+  label: label_with_icon("開始時間", "flaticon-clock-1")
+  %>
+  <%= f.input :end_at,
+  as: :string,
+  wrapper_html: { class: 'col-lg-3' },
+  input_html: { class: 'date-picker', 'data-date-format' => 'yyyy-mm-dd' },
+  label: label_with_icon("結束時間", "flaticon-clock-1")
+  %>
+</div>
+
+<div id="precise-row" class="form-group m-form__group row <%= 'd-none' unless current_object.precise? %>">
+  <%= f.input :gender,
+  include_blank: '',
+  label_method: :last,
+  value_method: :first,
+  wrapper_html: { class: 'col-lg-6 col-md-9 col-sm-12' },
+  label: label_with_icon("性別", "flaticon-profile-1"),
+  collection: current_object.class.human_attribute_enum('gender') %>
+  <%= f.association :age_groups,
+  collection: AgeGroup.options(include_blank: false, text_column: :group),
+  label: label_with_icon("年齡", "flaticon-profile-1"),
+  wrapper_html: { class: 'col-lg-6 col-md-9 col-sm-12' },
+  input_html: {class: 'form-control m-select2', multiple: "multiple" } %>
+</div>
+<div class="form-group m-form__group row">
+  <%= f.input :budget,
+  wrapper_html: { class: 'col-lg-4 col-md-9 col-sm-12' },
+  label: label_with_icon("預算", "flaticon-coins"),
+  hint: '若預算無上限請設定為0'
+  %>
+  <div class="col-lg-4 col-md-9 col-sm-12">
+    <label class="string optional" for="ad_atatus"><i class="flaticon-coins"></i> 已消耗</label>
+    <div class="col-md-4">
+      <p class="form-control-static">
+        <span> $ 0 </span>
+      </p>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-9 col-sm-12">
+    <label class="string optional" for="ad_atatus"><i class="flaticon-coins"></i> 餘額</label>
+    <div class="col-md-4">
+      <p class="form-control-static">
+        <span> $ 0 </span>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="form-group m-form__group row">
+  <%= f.input :cpm,
+  wrapper_html: { class: 'col-lg-3 col-md-9 col-sm-12' },
+  label: label_with_icon("CPM", "flaticon-piggy-bank") ,
+  hint: '每千次播放的單價'  %>
+  <%= f.input :cpv,
+  wrapper_html: { class: 'col-lg-3 col-md-9 col-sm-12' },
+  label: label_with_icon("CPV", "flaticon-piggy-bank"),
+  hint: '每一次觀看的單價'  %>
+  <div class="col-lg-3 col-md-9 col-sm-12">
+    <label class="string optional" for="ad_atatus"><i class="flaticon-imac"></i> 累計播放次數</label>
+    <div class="col-md-4">
+      <p class="form-control-static">
+        <span> 0 </span>
+      </p>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-9 col-sm-12">
+    <label class="string optional"><i class="flaticon-medical"></i> 累計觀看數</label>
+    <div class="col-md-4">
+      <p class="form-control-static">
+        <span> 0 </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="form-group m-form__group row">
+  <div class="col-lg-12 col-md-9 col-sm-12">
+    <%= f.label :scanning_link, label_with_icon("連結", "flaticon-logout") %>
+    <div class="input-group">
+      <%= f.input_field :scanning_link, class: 'form-control' %>
+      <% if current_object.scanning_link.present?%>
+        <%= link_to(current_object.scanning_link, class: 'input-group-addon', target: :_blank) do %>
+        <span>
+          <i class="la la-external-link"></i>
+        </span>
+        <% end %>
+      <% end %>
+    </div>
+    <span class="m-form__help">在設備播放時會自動轉成QRcode</span>
+  </div>
+</div>

@@ -1,16 +1,43 @@
 admin:
   -
     name: '場域設置'
-    icon: 'flaticon-settings'
+    icon: 'flaticon-map-location'
     class: ''
     items:
       -
         name: '店家管理'
         icon: 'la la-home'
         link: '/admin/stores'
-        resource: 'locations'
       -
         name: '設備管理'
-        icon: 'la la-database'
+        icon: 'la la-laptop'
         link: '/admin/devices'
-        resource: 'devices'
+      -
+        name: '店家總部'
+        icon: 'la la-group'
+        link: 'javascript:viod(0)'
+      -
+        name: '報表'
+        icon: 'la la-bar-chart'
+        link: 'javascript:viod(0)'
+  -
+    name: '投放內容'
+    icon: 'flaticon-imac'
+    class: ''
+    items:
+      -
+        name: '廣告管理'
+        icon: 'la la-desktop'
+        link: '/admin/ads'
+      -
+        name: '廣告審核'
+        icon: 'la	la-check-circle'
+        link: 'javascript:viod(0)'
+      -
+        name: '節目管理'
+        icon: 'la la-television'
+        link: '/admin/devices'
+      -
+        name: '報表'
+        icon: 'la la-bar-chart'
+        link: 'javascript:viod(0)'

@@ -65,39 +65,14 @@ export default {
     icon: function(source){
       return '<i class="' + source.icon + '"></i>';
     },
-    menuAppType: function(source){
-      if(source.is_image) {
-        return '<span class="m-badge m-badge--info m-badge--wide">Photo</span>';
-      } else if(source.is_video) {
-        return '<span class="m-badge m-badge--success m-badge--wide">Film</span>';
-      } else if(source.is_html5) {
-        return '<span class="m-badge m-badge--warning m-badge--wide">HTML5</span>';
+    adMaterialiDsplayer(source) {
+      if(!source.material) {
+        return '';
       }
-    },
-    getRowNameById(id, rows) {
-      const foundRow =  rows.find(function(row) {
-        return row.id == id ;
-      });
 
-      if(foundRow && foundRow.name) {
-        return foundRow.name;
-      } else {
-        return '';
-      }
-    },
-    materialFileDisplayer(source) {
-      if(!source.material_url) {
-        return '';
-      }
-      if(source.material_is_image) {
-        return `<a href="${source.material_url}" target="_blank">
-        <img src="${source.material_url}" width="96" height="54" />
-        </a>`;
-      } else {
-        return `<a href="${source.material_url}" target="_blank">
-        <video src="${source.material_url}" width="96" height="54" />
-        </a>`;
-      }
+      return `<a href="${source.material}" target="_blank">
+      <img src="${source.screenshot}" width="96" height="54" />
+      </a>`;
     },
     link(source, column) {
       const url = source[column]
