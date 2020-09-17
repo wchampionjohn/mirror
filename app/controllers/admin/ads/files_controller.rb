@@ -6,10 +6,16 @@ class Admin::Ads::FilesController < ApplicationController
     ad = Ad.find params[:ad_id]
     file_type = params[:file_type]
 
-    ad.update_attribute(file_type, params[:file])
-    ad.create_screenshot if file_type == 'material'
+    ad.update_attributes(
+      "#{file_type}" => params[:file],
+     "#{file_type}_size" => File.size(params[:file].path),
+      "#{file_type}_md5": Digest::MD5.hexdigest(params[:file].read)
+    )
 
-    render json: ad.send(file_type).url, status: :ok
+    response_info = ad.send("#{file_type}_info")
+    response_info[:size] = response_info[:size].to_filesize
+
+    render json: response_info, status: :ok
   end
 
 end

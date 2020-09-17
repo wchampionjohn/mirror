@@ -1,7 +1,9 @@
 module AdHelpers
   extend ActiveSupport::Concern
+
   included do
     helper_method :all_category_items, :current_category_items
+    before_action :setup_material, only: [:new, :create]
   end
 
 
@@ -25,6 +27,16 @@ module AdHelpers
     end
   end
 
+  def setup_material
+    if current_object.new_record?
+
+      if current_object.file_code.nil?
+        current_object.file_code = params["file_code"] || SecureRandom.hex(32)
+      end
+
+      tmp_file = TmpFile.find_by(code: current_object.file_code)
+    end
+  end
 
 end
 

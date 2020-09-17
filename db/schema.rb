@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_16_032343) do
+ActiveRecord::Schema.define(version: 2020_09_16_070752) do
 
   create_table "ad_age_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "age_group_id"
@@ -59,6 +59,10 @@ ActiveRecord::Schema.define(version: 2020_09_16_032343) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "screenshot"
+    t.string "material_md5"
+    t.integer "material_size"
+    t.string "banner_md5"
+    t.integer "banner_size"
     t.index ["ad_type"], name: "index_ads_on_ad_type"
     t.index ["end_at"], name: "index_ads_on_end_at"
     t.index ["gender"], name: "index_ads_on_gender"
@@ -170,6 +174,17 @@ ActiveRecord::Schema.define(version: 2020_09_16_032343) do
     t.index ["city_id"], name: "index_stores_on_city_id"
     t.index ["gender"], name: "index_stores_on_gender"
     t.index ["headquarter_id"], name: "index_stores_on_headquarter_id"
+  end
+
+  create_table "tmp_files", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "code"
+    t.string "file"
+    t.string "model"
+    t.string "column"
+    t.integer "size"
+    t.string "md5"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         resources :files, only: [:create]
       end
     end
+    resources :tmp_files
   end
 
   resources :cities, only:[] do

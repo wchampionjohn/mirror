@@ -14,6 +14,7 @@ module Mirror
     config.autoload_paths += %W(services)
     config.autoload_paths += %W(serializers)
     config.autoload_paths += %W(validators)
+    Dir[File.join(Rails.root, "lib", "core_ext", "*.rb")].each {|l| require l }
 
     config.i18n.default_locale = 'zh-TW'
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]

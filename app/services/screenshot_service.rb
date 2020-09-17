@@ -5,7 +5,7 @@ class ScreenshotService
   end
 
   def perform
-    movie = FFMPEG::Movie.new(Ad.last.material.file.file)
+    movie = FFMPEG::Movie.new(@path)
     temp_path = Rails.root.join('tmp', 'screenshot.jpg').to_s
     movie.screenshot(temp_path, seek_time: @second)
   end

@@ -1,8 +1,10 @@
 class Ad < ApplicationRecord
   # extends ...................................................................
   # includes ..................................................................
+  include RangeReasonable
   # security (i.e. attr_accessible) ...........................................
   attr_accessor :advertiser_name
+  attr_accessor :file_code
   # relationships .............................................................
   belongs_to :category
   belongs_to :category_item
@@ -13,6 +15,10 @@ class Ad < ApplicationRecord
   validates_presence_of :name, :seconds, :budget, :start_at, :end_at
   # callbacks .................................................................
   before_validation do
+    if self.file_code && tmp_objects = TmpFile.where(code: self.file_code)
+      sync_files_from tmp_objects
+    end
+
     if self.advertiser_name.present?
       created_advertiser = Advertiser.new
       created_advertiser.name = self.advertiser_name
@@ -20,9 +26,14 @@ class Ad < ApplicationRecord
       self.advertiser = created_advertiser
     end
   end
+
+  after_save do
+    create_screenshot if saved_change_to_material?
+  end
   # scopes ....................................................................
   # additional config .........................................................
   DEFAULT_VALUES = {
+    start_at: Date.today,
     ad_type: :carousel,
     seconds: 30,
     budget: 0,
@@ -40,7 +51,7 @@ class Ad < ApplicationRecord
   # class methods .............................................................
   # public instance methods ...................................................
   def create_screenshot
-    material_path =  material.file.file
+    material_path = material.file.file
     movie = ScreenshotService.new(material_path, 10).perform
     update_attribute(:screenshot, File.open(movie.path))
   end
@@ -52,6 +63,57 @@ class Ad < ApplicationRecord
       accumulator
     end
   end
+
+  def material_info
+    if new_record?
+      file_object('material').info
+    else
+      {
+        url: material.url,
+        size: material_size,
+        md5: material_md5
+      }
+    end
+  end
+
+  def banner_info
+    if new_record?
+      file_object('banner').info
+    else
+      {
+        url: banner.url,
+        size: banner_size,
+        md5: banner_md5
+      }
+    end
+  end
+
+  def file_object column
+    new_record? ? TmpFile.find_or_initialize_by(code: self.file_code, column: column) : self
+  end
   # protected instance methods ................................................
   # private instance methods ..................................................
+  private
+
+  def sync_files_from tmp_objects
+    material_tmp = tmp_objects.find_by(column: 'material')
+    banner_tmp = tmp_objects.find_by(column: 'banner')
+
+    if Rails.env.production?
+      self.remote_material_url = material_tmp.file.url
+      self.remote_banner_url = banner_tmp.file.url if banner_tmp.present?
+    else
+      self.material = material_tmp.file.file
+      self.banner = banner_tmp.file.file if banner_tmp.present?
+    end
+
+    self.material_md5 = material_tmp.md5
+    self.material_size = material_tmp.size
+
+    if banner_tmp.present?
+      self.banner_md5 = banner_tmp.md5
+      self.banner_size = banner_tmp.size
+    end
+  end
+
 end

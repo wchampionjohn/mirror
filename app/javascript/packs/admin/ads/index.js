@@ -8,11 +8,11 @@ new Vue({
     sourceName: 'ads',
     columns: [
       'id:ID',
-      'name:廣告名稱',
+      'name:名稱',
       'status:狀態',
       'period:走期',
       'material:影音素材',
-      'unit_price:單價',
+      'unit_price:計價',
       'ad_type:播放方式',
     ],
     sortingColumns: ['id', 'name'],

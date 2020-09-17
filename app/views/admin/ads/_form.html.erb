@@ -8,18 +8,21 @@
   [:admin, current_object],
   wrapper: :inline_form,
   html: { class: 'm-form m-form--fit m-form--label-align-right'}) do |f| %>
+  <%= hidden_field_tag(:file_code, current_object.file_code) %>
   <div class="m-portlet__body">
     <div class="m-form__section m-form__section--first">
       <div class="row">
         <div class="col-xl-10 offset-xl-1">
           <%= render partial: 'basic', locals: { f: f } %>
           <div class="m-separator m-separator--dashed m-separator--lg"></div>
+          <%= render partial: 'charge', locals: { f: f } %>
+          <div class="m-separator m-separator--dashed m-separator--lg"></div>
           <%= render partial: 'materials', locals: { f: f } %>
         </div>
       </div>
     </div>
   </div>
-  <%= render partial: 'shared/submit', locals: { f: f, cancel_path: admin_devices_path } %>
+  <%= render partial: 'shared/submit', locals: { f: f, cancel_path: admin_ads_path } %>
   <% end %>
 </div>
 
