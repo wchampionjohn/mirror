@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_16_070752) do
+ActiveRecord::Schema.define(version: 2020_09_17_063335) do
 
   create_table "ad_age_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "age_group_id"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2020_09_16_070752) do
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ad_stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "ad_id"
+    t.integer "store_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ad_id"], name: "index_ad_stores_on_ad_id"
+    t.index ["store_id"], name: "index_ad_stores_on_store_id"
   end
 
   create_table "ads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -63,9 +72,11 @@ ActiveRecord::Schema.define(version: 2020_09_16_070752) do
     t.integer "material_size"
     t.string "banner_md5"
     t.integer "banner_size"
+    t.integer "slat_id"
     t.index ["ad_type"], name: "index_ads_on_ad_type"
     t.index ["end_at"], name: "index_ads_on_end_at"
     t.index ["gender"], name: "index_ads_on_gender"
+    t.index ["slat_id"], name: "index_ads_on_slat_id"
     t.index ["start_at"], name: "index_ads_on_start_at"
     t.index ["status"], name: "index_ads_on_status"
   end
@@ -123,6 +134,12 @@ ActiveRecord::Schema.define(version: 2020_09_16_070752) do
     t.integer "stores_count"
     t.string "name"
     t.integer "commission"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "slats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

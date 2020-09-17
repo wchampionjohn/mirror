@@ -2,6 +2,8 @@ class Ad < ApplicationRecord
   # extends ...................................................................
   # includes ..................................................................
   include RangeReasonable
+  include Ad::StateValidator
+  include Ad::States
   # security (i.e. attr_accessible) ...........................................
   attr_accessor :advertiser_name
   attr_accessor :file_code
@@ -9,14 +11,18 @@ class Ad < ApplicationRecord
   belongs_to :category
   belongs_to :category_item
   belongs_to :advertiser
+  belongs_to :slat, optional: true
   has_many :ad_age_groups
   has_many :age_groups, through: :ad_age_groups
   # validations ...............................................................
-  validates_presence_of :name, :seconds, :budget, :start_at, :end_at
+  validates_presence_of :name, :seconds, :budget
+  validates_presence_of :start_at, :end_at, unless: :reserve?
+  validates_presence_of :slat, if: :carousel?
   # callbacks .................................................................
   before_validation do
-    if self.file_code && tmp_objects = TmpFile.where(code: self.file_code)
-      sync_files_from tmp_objects
+    if self.file_code
+      tmp_objects = TmpFile.where(code: self.file_code)
+      sync_files_from tmp_objects if tmp_objects.present?
     end
 
     if self.advertiser_name.present?

@@ -43,6 +43,7 @@ gem 'rack-cors', '~> 1.1.1', require: 'rack/cors' # 跨站請求
 gem 'paranoia', '~> 2.4.2' # 假刪除
 gem 'letter_opener', '~> 1.7.0'
 gem 'streamio-ffmpeg'
+gem 'aasm'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

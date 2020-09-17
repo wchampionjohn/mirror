@@ -1,0 +1,2 @@
+class AdStore < ApplicationRecord
+end

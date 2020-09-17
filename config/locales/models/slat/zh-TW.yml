@@ -9,7 +9,7 @@ zh-TW:
         age_groups: '年齡'
         ad_type: '播放方式'
         start_at: '開始時間'
-        slat: '版位'
+        end_at: '結束時間'
       ad/gender:
         male: '男性'
         female: '女性'
