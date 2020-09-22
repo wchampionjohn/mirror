@@ -1,6 +1,6 @@
 <template>
   <button type="button"
-          class="btn btn-outline-accent m-btn"
+          class="btn btn-outline-warning m-btn"
           data-toggle="m-tooltip"
           v-on:click="show()"
           >查看</button>
@@ -106,7 +106,7 @@
 
         let result = '<div class="modal-header">';
         result += '<h5 class="modal-title">';
-        result += `<span class="m--font-info">${this.source.name}</span>`;
+        result += `<span class="m--font-warning">${this.source.name}</span>`;
         result += '</h5> '
         result += `<button type="button" @click="$emit('close')"class="close" data-dismiss="modal" aria-label="Close">`;
         result += '<span aria-hidden="true">×</span>';
