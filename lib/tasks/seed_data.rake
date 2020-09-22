@@ -36,4 +36,12 @@ namespace :seed_data do
     end
   end
 
+  task slat: :environment do
+    file_dir = Rails.root.join('data', 'seeds').to_s
+    rows = YAML.load(File.open(Rails.root.join("#{file_dir}/slats.json")))
+    rows.each do |slat|
+      Slat.create slat
+    end
+  end
+
 end

@@ -17,7 +17,7 @@ class Ad < ApplicationRecord
   # validations ...............................................................
   validates_presence_of :name, :seconds, :budget
   validates_presence_of :start_at, :end_at, unless: :reserve?
-  validates_presence_of :slat, if: :carousel?
+  validates_presence_of :slat, if: :carousel_in_pending?
   # callbacks .................................................................
   before_validation do
     if self.file_code
@@ -43,16 +43,21 @@ class Ad < ApplicationRecord
     ad_type: :carousel,
     seconds: 30,
     budget: 0,
+    views: 0,
+    impressions: 0,
     cpm: 0.0,
     cpv: 0.0,
   }
 
   enum gender: [:male, :female]
   enum ad_type: [:carousel, :precise, :reserve]
+  enum status: [:pending, :stopping, :rejection, :running, :waiting, :ending]
 
   mount_uploader :banner, ImageUploader
   mount_uploader :screenshot, ImageUploader
   mount_uploader :material, AdMaterialUploader
+
+  alias_attribute :state, :status
 
   # class methods .............................................................
   # public instance methods ...................................................
@@ -97,6 +102,10 @@ class Ad < ApplicationRecord
   def file_object column
     new_record? ? TmpFile.find_or_initialize_by(code: self.file_code, column: column) : self
   end
+
+  def period
+    start_at .. end_at
+  end
   # protected instance methods ................................................
   # private instance methods ..................................................
   private
@@ -120,6 +129,10 @@ class Ad < ApplicationRecord
       self.banner_md5 = banner_tmp.md5
       self.banner_size = banner_tmp.size
     end
+  end
+
+  def carousel_in_pending?
+     carousel? && pending?
   end
 
 end

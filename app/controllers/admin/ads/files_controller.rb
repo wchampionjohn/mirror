@@ -8,7 +8,7 @@ class Admin::Ads::FilesController < ApplicationController
 
     ad.update_attributes(
       "#{file_type}" => params[:file],
-     "#{file_type}_size" => File.size(params[:file].path),
+      "#{file_type}_size" => File.size(params[:file].path),
       "#{file_type}_md5": Digest::MD5.hexdigest(params[:file].read)
     )
 

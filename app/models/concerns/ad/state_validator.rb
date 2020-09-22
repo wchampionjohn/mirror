@@ -16,4 +16,8 @@ module Ad::StateValidator
     Time.now.between?(start_at, end_at.end_of_day)
   end
 
+  def budget_enough?
+    budget > 0
+  end
+
 end

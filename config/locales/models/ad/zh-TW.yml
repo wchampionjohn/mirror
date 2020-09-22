@@ -17,3 +17,10 @@ zh-TW:
         carousel: '輪播'
         precise: '精準'
         reserve: '墊檔'
+      ad/status:
+        pending: '待審核'
+        rejection: '未通過'
+        stopping: '暫停中'
+        running: '播放中'
+        waiting: '等待中'
+        ending: '結束'

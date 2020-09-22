@@ -10,6 +10,19 @@ class Slat < ApplicationRecord
   # scopes ....................................................................
   # additional config .........................................................
   # class methods .............................................................
+  def self.free_in period
+    records = self.all
+    ads = Ad.where.not(status: :pending)
+      .where("end_at >= ?", period.first)
+      .where("start_at <=?", period.last)
+
+    booked_ads = ads.select do |ad| # 走期內有其他廣告
+      ad.start_at.in?(period) || ad.end_at.in?(period)
+    end
+
+    booked_records = booked_ads.map &:slat
+    records - booked_records.to_a
+  end
   # public instance methods ...................................................
   # protected instance methods ................................................
   # private instance methods ..................................................

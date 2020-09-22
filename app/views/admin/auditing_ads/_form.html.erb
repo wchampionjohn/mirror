@@ -1,0 +1,75 @@
+<div class="m-portlet">
+  <div id="all-category" data-options="<%= all_category_items.to_json %>"></div>
+  <%= render partial: 'shared/form_head', locals: {
+  title: @form_title, sub_title: @form_sub_title
+  } %>
+
+  <%= simple_form_for(
+  [:admin, current_object],
+  wrapper: :inline_form,
+  html: { class: 'm-form m-form--fit m-form--label-align-right'}) do |f| %>
+  <%= hidden_field_tag(:file_code, current_object.file_code) %>
+  <div class="m-portlet__body">
+    <div class="m-form__section m-form__section--first">
+      <div class="row">
+        <div class="col-xl-10 offset-xl-1">
+          <%= render partial: 'basic', locals: { f: f } %>
+          <div class="m-separator m-separator--dashed m-separator--lg"></div>
+          <%= render partial: 'charge', locals: { f: f } %>
+          <div class="m-separator m-separator--dashed m-separator--lg"></div>
+          <%= render partial: 'materials', locals: { f: f } %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render partial: 'shared/submit', locals: { f: f, cancel_path: admin_ads_path } %>
+  <% end %>
+</div>
+
+
+<script type="text/javascript" charset="utf-8">
+  $(".date-picker").datepicker();
+
+  $('.m-select2').select2();
+  var allItemsOptions = $("#all-category").data('options');
+
+  $("#ad_category_id").change(function() {
+    var itemSelect = $("#ad_category_item_id");
+    var categoryId = $(this).val();
+    var itemOptions = allItemsOptions.filter((item) => {
+      return item.category_id == categoryId;
+    })
+
+    itemSelect.html('');
+
+    console.log(itemOptions);
+    if(itemOptions.length > 0) {
+      $.each(itemOptions, function( index,row ) {
+        itemSelect.append('<option value="' + row.id + '">' + row.name + '</option>');
+      });
+    } else {
+      itemSelect.html('<option value="">請先選擇產業類別</option>');
+    }
+  })
+  $("#ad_ad_type").change(function() {
+    console.log($(this).val());
+    if($(this).val() == 'precise') {
+      $('#precise-row').removeClass('d-none');
+      $('.m-select2').select2();
+    } else {
+      $('#precise-row').addClass('d-none');
+    }
+  });
+
+  $("#is-create-advertiser").click(function() {
+    $('#ad_advertiser_name').val('');
+    if($(this).is(":checked")) {
+      $("#ad_advertiser_name").removeClass('d-none');
+      $("#ad_advertiser_id").val('');
+      $("#ad_advertiser_id").addClass('d-none');
+    } else {
+      $('#ad_advertiser_name').addClass('d-none');
+      $("#ad_advertiser_id").removeClass('d-none');
+    }
+  })
+</script>

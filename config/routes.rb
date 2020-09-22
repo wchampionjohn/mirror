@@ -15,6 +15,18 @@ Rails.application.routes.draw do
         resources :files, only: [:create]
       end
     end
+
+    resources :auditing_ads, only: [:index] do
+      collection do
+        post :batch_approve
+      end
+      scope module: :auditing_ads do
+        member do
+          resource :judgement, only: [:create, :destroy]
+          resource :wait, only: [:create]
+        end
+      end
+    end
     resources :tmp_files
   end
 

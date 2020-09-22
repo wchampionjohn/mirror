@@ -6,7 +6,7 @@ module Ad::States
     include AASM
 
     # TODO 補上rspec
-    aasm column: :state do
+    aasm column: :status do
       state :pending, initial: true
       state :rejection
       state :stopping
@@ -21,7 +21,7 @@ module Ad::States
       end
 
       event :resume do
-        transitions from: :stopping, to: :running, to: :running, guard: :can_be_run?
+        transitions from: :stopping, to: :running, guard: :can_be_run?
       end
 
       event :ready  do
@@ -52,6 +52,11 @@ module Ad::States
         transitions from: :stopping, to: :ending
       end
     end
+  end
+
+  def log_status_change
+    # 有必要時再存到DB
+    puts "changing from #{aasm.from_state} to #{aasm.to_state} (event: #{aasm.current_event}) at #{Time.now}"
   end
 
 end

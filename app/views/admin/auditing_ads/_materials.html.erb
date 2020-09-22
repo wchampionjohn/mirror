@@ -1,0 +1,133 @@
+<div class="m-form__heading">
+  <div class="col-lg-4 col-md-9 col-sm-12">
+    <h3 class="m-form__heading-title">
+      <i class="flaticon-app"></i>
+      播放內容:
+    </h3>
+  </div>
+</div>
+
+<div class="form-group m-form__group row">
+  <div class="col-lg-12 col-md-9 col-sm-12">
+    <%= f.label :scanning_link, label_with_icon("連結", "flaticon-logout") %>
+    <div class="input-group">
+      <%= f.input_field :scanning_link, class: 'form-control' %>
+      <% if current_object.scanning_link.present?%>
+        <%= link_to(current_object.scanning_link, class: 'input-group-addon', target: :_blank) do %>
+        <span>
+          <i class="la la-external-link"></i>
+        </span>
+        <% end %>
+      <% end %>
+    </div>
+    <span class="m-form__help">在設備播放時會自動轉成QRcode</span>
+  </div>
+</div>
+
+<div id="material" class="form-group m-form__group row">
+  <div id="ad"
+    data-id="<%= current_object.id %>"
+    data-file-code="<%= current_object.file_code %>"
+    data-banner-url="<%= current_object.banner_info[:url] %>"
+    data-banner-size="<%= current_object.banner_info[:size].try(:to_filesize) %>"
+    data-material-url="<%= current_object.material_info[:url] %>"
+    data-material-size="<%= current_object.material_info[:size].try(:to_filesize) %>"
+    >
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12 m--margin-top-10" align="center">
+    <div class="col-lg-12">
+      <label class="form-control-label"> * 影音素材</label>
+      <%= f.error :material %>
+    </div>
+
+    <div id="m-dropzone-one" class="m-dropzone dropzone dz-clickable">
+      <div class="m-dropzone__msg dz-message needsclick" >
+        <h5 v-show="!materialUrl" style="display:inline-block;">
+          請拖曳檔案或點擊上傳
+        </h5>
+        <video width="168" height="100" controls muted="muted" v-if="materialUrl">
+          <source :src="materialUrl"  type="video/mp4">
+        </video>
+        <br />
+        <mark v-html="materialSize" v-if="materialSize"></mark>
+      </div>
+    </div>
+    <div class="col-lg-12 m--margin-top-10">
+      <h6>建議尺寸: 1,280 × 720 pixels(16:9)</h6>
+      <h6>允許格式: MP4</h6>
+      <h6>檔案大小限制: 100MB</h6>
+    </div>
+
+    <div class="col-lg-12 m--margin-top-10" align="center" v-show="materialUrl">
+      <div style="margin-top: 10px;">
+        <button
+          v-on:click="fillCurrentImage(materialUrl)"
+          type="button"
+          data-placement="left"
+          data-toggle="modal"
+          data-target="#m_modal"
+          class="btn m-btn--pill btn-danger">
+          顯示
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-md-6 col-sm-8 m--margin-top-10" align="center">
+    <div class="col-lg-12">
+      <label class="form-control-label string optional" for="ad_daily_budget"> Banner</label>
+      <%= f.error :banner %>
+    </div>
+
+    <div id="m-dropzone-two" class="m-dropzone dropzone" style="width:150px; height:400px; line-height:300px">
+      <div class="m-dropzone__msg dz-message needsclick">
+        <h5 v-show="!bannerUrl" style="display:inline-block;">
+          請拖曳檔案或點擊上傳
+        </h5>
+        <img class="custom_img" :src="bannerUrl" width="75" height="184" v-show="bannerUrl">
+      </div>
+    </div>
+    <div class="col-lg-12 m--margin-top-10" >
+      <h6>建議尺寸: 934 x 260 pixels</h6>
+      <h6>允許格式: JPEG、JPG、PNG、GIF</h6>
+      <h6>檔案大小限制: 10MB</h6>
+    </div>
+
+    <div class="col-lg-12 m--margin-top-10" align="center" v-show="bannerUrl">
+      <div style="margin-top: 10px;">
+        <button
+          type="button"
+          v-on:click="fillCurrentImage(bannerUrl)"
+          data-placement="left"
+          data-toggle="modal"
+          data-target="#m_modal"
+          class="btn m-btn--pill btn-danger">
+          顯示
+        </button>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="m_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="modal-file">
+          <video autoplay controls muted="muted" v-if="currentImageType == 'mp4'" width="600px">
+            <source :src="currentImage"  type="video/mp4">
+          </video>
+          <img :src="currentImage" width="260" height="934" v-else>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+

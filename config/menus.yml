@@ -32,7 +32,7 @@ admin:
       -
         name: '廣告審核'
         icon: 'la	la-check-circle'
-        link: 'javascript:viod(0)'
+        link: '/admin/auditing_ads'
       -
         name: '節目管理'
         icon: 'la la-television'

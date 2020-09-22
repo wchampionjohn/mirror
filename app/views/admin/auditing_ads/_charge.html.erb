@@ -1,0 +1,58 @@
+<div class="m-form__heading">
+  <div class="col-lg-4 col-md-9 col-sm-12">
+    <h3 class="m-form__heading-title">
+      <i class="flaticon-app"></i>
+      計價方式:
+    </h3>
+  </div>
+</div>
+<div class="form-group m-form__group row">
+  <%= f.input :budget,
+  wrapper_html: { class: 'col-lg-4 col-md-9 col-sm-12' },
+  label: label_with_icon("預算", "flaticon-coins"),
+  hint: '若預算無上限請設定為0'
+  %>
+  <div class="col-lg-4 col-md-9 col-sm-12">
+    <label class="string optional" for="ad_atatus"><i class="flaticon-coins"></i> 已消耗</label>
+    <div class="col-md-4">
+      <p class="form-control-static">
+        <span> $ 0 </span>
+      </p>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-9 col-sm-12">
+    <label class="string optional" for="ad_atatus"><i class="flaticon-coins"></i> 餘額</label>
+    <div class="col-md-4">
+      <p class="form-control-static">
+        <span> $ 0 </span>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="form-group m-form__group row">
+  <%= f.input :cpm,
+  wrapper_html: { class: 'col-lg-3 col-md-9 col-sm-12' },
+  label: label_with_icon("CPM", "flaticon-piggy-bank") ,
+  hint: '每千次播放的單價'  %>
+  <%= f.input :cpv,
+  wrapper_html: { class: 'col-lg-3 col-md-9 col-sm-12' },
+  label: label_with_icon("CPV", "flaticon-piggy-bank"),
+  hint: '每一次觀看的單價'  %>
+  <div class="col-lg-3 col-md-9 col-sm-12">
+    <label class="string optional" for="ad_atatus"><i class="flaticon-imac"></i> 累計播放次數</label>
+    <div class="col-md-4">
+      <p class="form-control-static">
+        <span> 0 </span>
+      </p>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-9 col-sm-12">
+    <label class="string optional"><i class="flaticon-medical"></i> 累計觀看數</label>
+    <div class="col-md-4">
+      <p class="form-control-static">
+        <span> 0 </span>
+      </p>
+    </div>
+  </div>
+</div>
+

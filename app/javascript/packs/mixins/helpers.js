@@ -1,5 +1,32 @@
 export default {
   methods:{
+    adState: function(source, column){
+
+      let style = ''
+
+      switch(source[column]) {
+        case 'pending':
+          style = "m-badge--info"
+          break;
+        case 'running':
+          style = "m-badge--success"
+          break;
+        case 'rejection':
+          style = "m-badge--default"
+          break;
+        case 'stopping':
+          style = "m-badge--danger"
+          break;
+        case 'ending':
+          style = "m-badge--metal"
+          break;
+        case 'waiting':
+          style = "m-badge--warning"
+          break;
+      }
+
+      return '<span class="m-badge ' + style + ' m-badge--wide">' + source.status_text + '</span>';
+    },
     service_light: function(source){
 
       let style = ''
@@ -117,7 +144,14 @@ export default {
       const title = remain_seconds.join('/');
 
       return `<span class="m--font-danger" data-toggle="m-tooltip" data-original-title="${title}">指我查看</span>`
+    },
+    bannerDisplayer(url) {
+      if(url) {
+        return `<a href="${url}" target="_blank"><img src="${url}" width="30" height="120" /></a>`;
+      } else {
+        return '未上傳';
+      }
+
     }
   },
-
 }

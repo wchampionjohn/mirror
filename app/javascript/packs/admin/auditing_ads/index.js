@@ -9,7 +9,7 @@ new Vue({
   el: '[data-behavior="app"]',
   mixins: [mainMixin],
   data: {
-    sourceName: 'ads',
+    sourceName: 'audit_ads',
     columns: [
       'id:ID',
       'name:名稱',
@@ -25,5 +25,27 @@ new Vue({
     cellComponentDecorators: { more: more },
     ajaxUrl: '',
     cellHelperDecorators:{ status: 'adState', material: 'adMaterialiDsplayer' },
+    enableEdit: false,
+    enableDelete: false,
+    extraActions: [
+      {
+        link: 'auditing_ads/:id/judgement',
+        name: '審核通過',
+        icon: 'la la-check-circle-o m--font-success',
+        attributes: {
+          "data-confirm-swal": "確定通過此廣告審核嗎",
+          "data-method": "create"
+        }
+      },
+      {
+        link: 'auditing_ads/:id/judgement',
+        name: '審核不通過',
+        icon: 'la la-ban m--font-danger',
+        attributes: {
+          "data-confirm-swal": "確定拒絕此廣告的審核嗎?",
+          "data-method": "delete"
+        }
+      }
+    ],
   },
 });

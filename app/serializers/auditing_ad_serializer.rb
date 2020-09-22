@@ -1,4 +1,4 @@
-class AdSerializer
+class AuditingAdSerializer
   include FastJsonapi::ObjectSerializer
   attributes :id, :name, :status
   attributes :impressions, :views, :seconds, :scanning_link
