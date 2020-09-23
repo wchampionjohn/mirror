@@ -34,7 +34,7 @@
                 <i class="la la-play"></i>
                 <b>產品類別:</b>
               </label>
-            <span class="m--font-bolder">${this.source.category}</span>
+            <span class="help-bolck">${this.source.category}</span>
             </div>
           </div>
           <div class="form-group m-form__group row">
@@ -43,7 +43,7 @@
               <i class="la la-play"></i>
               <b>秒數:</b>
             </label>
-            <span class="m--font-bolder">${this.source.seconds}</span>
+            <span class="help-bolck">${this.source.seconds}</span>
           </div>
           </div>
           <div class="form-group m-form__group row">
@@ -52,7 +52,7 @@
               <i class="la la-play"></i>
               <b>代理商:</b>
             </label>
-          <span class="m--font-bolder">${this.source.advertiser || ''}</span>
+          <span class="help-bolck">${this.source.advertiser || ''}</span>
           </div>
         </div>
           <div class="form-group m-form__group row">
@@ -61,7 +61,7 @@
               <i class="la la-play"></i>
               <b>累計播放次數:</b>
             </label>
-          <span class="m--font-bolder">${this.source.impressions || 0}</span>
+          <span class="help-bolck">${this.source.impressions || 0}</span>
           </div>
         </div>
           <div class="form-group m-form__group row">
@@ -70,7 +70,7 @@
               <i class="la la-play"></i>
               <b>累計觀看數:</b>
             </label>
-          <span class="m--font-bolder">${this.source.views || 0}</span>
+          <span class="help-bolck">${this.source.views || 0}</span>
           </div>
         </div>
           <div class="form-group m-form__group row">
@@ -79,7 +79,7 @@
               <i class="la la-play"></i>
               <b>連結:</b>
             </label>
-          <span class="m--font-bolder">${this.source.scanning_link}</span>
+          <span class="help-bolck">${this.source.scanning_link}</span>
           </div>
         </div>
           <div class="form-group m-form__group row">
@@ -88,7 +88,7 @@
               <i class="la la-play"></i>
               <b>Banner:</b>
             </label>
-          <span class="m--font-bolder">${this.bannerDisplayer(this.source.banner)}</span>
+          <span class="help-bolck">${this.bannerDisplayer(this.source.banner)}</span>
           </div>
         </div>
         </form>

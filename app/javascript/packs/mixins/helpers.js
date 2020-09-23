@@ -151,7 +151,10 @@ export default {
       } else {
         return '未上傳';
       }
-
-    }
+    },
+    programsLinkOfChannel(source) {
+      const url = `channels/${source.id}/programs`
+      return `<a href="${url}">${source.programs}</a>`;
+    },
   },
 }

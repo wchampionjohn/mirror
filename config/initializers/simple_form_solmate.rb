@@ -103,9 +103,9 @@ SimpleForm.setup do |config|
     b.use :label, class: 'col-xl-3 col-lg-3 col-form-label'
 
     b.wrapper tag: 'div', class: 'col-xl-9 col-lg-9' do |ba|
-    ba.wrapper tag: 'div', class: 'checkbox-list' do |bc|
-      bc.wrapper tag: 'label', class: 'checkbox-inline' do |bd|
-        bd.use :input
+      ba.wrapper tag: 'div', class: 'checkbox-list' do |bc|
+        bc.wrapper tag: 'label', class: 'checkbox-inline' do |bd|
+          bd.use :input
         end
       end
     end
@@ -119,9 +119,9 @@ SimpleForm.setup do |config|
     b.use :label, class: 'col-lg-4 col-sm-12'
 
     b.wrapper tag: 'div', class: 'col-lg-4 col-md-9 col-sm-12', wrapper: :store_input_group do |ba|
-    ba.wrapper tag: 'div', class: 'checkbox-list' do |bc|
-      bc.wrapper tag: 'label', class: 'checkbox-inline' do |bd|
-        bd.use :input
+      ba.wrapper tag: 'div', class: 'checkbox-list' do |bc|
+        bc.wrapper tag: 'label', class: 'checkbox-inline' do |bd|
+          bd.use :input
         end
       end
     end
@@ -137,6 +137,23 @@ SimpleForm.setup do |config|
 
     b.wrapper tag: 'div', class: 'col-lg-12 col-md-9 col-sm-12' do |ba|
       ba.use :label
+      ba.use :input, class: 'form-control'
+      ba.use :error, wrap_with: { tag: 'span', class: 'm-form__help m--font-danger' }
+      ba.use :hint,  wrap_with: { tag: 'p', class: 'm-form__help' }
+    end
+  end
+
+  config.wrappers :fit_form, tag: 'div', class: 'form-group m-form__group row', error_class: 'has-error' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.optional :maxlength
+    b.optional :pattern
+    b.optional :min_max
+    b.optional :readonly
+
+    b.use :label, class: 'col-lg-4 col-sm-12'
+
+    b.wrapper tag: 'div', class: 'col-lg-4 col-md-9 col-sm-12' do |ba|
       ba.use :input, class: 'form-control'
       ba.use :error, wrap_with: { tag: 'span', class: 'm-form__help m--font-danger' }
       ba.use :hint,  wrap_with: { tag: 'p', class: 'm-form__help' }

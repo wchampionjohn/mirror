@@ -1,0 +1,111 @@
+<input type="hidden" id="channel" name="channel_id" data-id="<%= @channel.id %>" data-programs="<%= @programs.to_json %>">
+<div id="app" class="m-portlet__head">
+  <div class="m-portlet__head-caption">
+    <div class="m-portlet__head-title">
+      <h3 class="m-portlet__head-text">
+        <%= @channel.name %>
+      </h3>
+    </div>
+  </div>
+</div>
+<div class="m-portlet__body">
+  <div class="form-group">
+    <div class="row m--margin-top-40">
+      <div class="col-xl-10 offset-xl-1">
+        <div class="m-form__section m-form__section--first">
+          <div class="form-group m-form__group row">
+            <label class="col-form-label col-lg-3 col-sm-12">
+              <a href="#" class="m-nav-grid__item"></a>
+              <i class="m-nav-grid__icon flaticon-file"></i>
+              Upload Zone:
+            </label>
+            <div class="col-lg-6 col-md-9 col-sm-12">
+              <div class="m-dropzone dropzone dz-clickable" id="m-dropzone-one">
+                <div class="m-dropzone__msg dz-message needsclick">
+                  <h5>
+                    Drop files here or click to upload.
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!--End m-form__section first -->
+        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+        <div class="m-form__heading">
+          <h5 class="m-form__heading-title">
+            Active
+          </h5>
+        </div>
+        <div class="m-portlet__body">
+          <!--begin: local Datatable -->
+          <div class="m-section__content">
+            <programs-table-vue :rows="programs" :channel="channelId" />
+              <!--begin: Tab content -->
+              <!--end::tab 1 content-->
+          </div> <!-- End m-section__content -->
+        </div>
+
+        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+        <div class="m-form__heading">
+          <h5 class="m-form__heading-title">
+            Suspended
+          </h5>
+        </div>
+        <div class="m-portlet__body">
+          <!--begin: local Datatable -->
+          <div class="m-section__content">
+            <!--begin: Tab content -->
+            <table class="table table-striped m-table">
+              <thead>
+                <tr>
+                  <th width="35%">
+                    Name
+                  </th>
+                  <th width="10%">
+                    Seconds
+                  </th>
+                  <th width="10%">
+                    Extension
+                  </th>
+                  <th width="25%">
+                    Update Time
+                  </th>
+                  <th width="15%">
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="program in inactivePrograms()">
+                  <td v-html="program.name"></td>
+                  <td v-html="program.seconds"></td>
+                  <td v-html="program.extension"></td>
+                  <td v-html="program.updated_at"></td>
+                  <td>
+                    <a href="javascript:void(0)" @click="recover(program.id)"><i class="la la-reply m--font-info"></i></a>
+                    <a href="javascript:void(0)" @click="destroy(program.id)"><i class="la la-remove m--font-info"></i></a>
+                  </td>
+                </tr>
+                <tr v-if="inactivePrograms().length == 0">
+                  <td colspan="5">no any programs</td>
+                </tr>
+              </tbody>
+            </table>
+            <!--end::tab 1 content-->
+          </div> <!-- End m-section__content -->
+        </div>
+
+        <!--end: local Datatable -->
+      </div><!--End m-portlet__body -->
+    </div> <!--End row -->
+    <div class="m-form__actions m-form__actions--solid">
+      <div class="row m--align-left">
+        <div class="col-lg-8">
+          <%= link_to(admin_program_channels_path, class: 'btn btn-info') do %>
+            <i class="la la-angle-left"></i> Back
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div><!--End form-group-->
+</div><!--End form-group-->

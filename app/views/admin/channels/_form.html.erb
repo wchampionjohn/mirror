@@ -1,0 +1,31 @@
+<%= render partial: 'shared/form_caption', locals: { title:  "#{current_object.new_record? ? "新增" : "編輯"}頻道" } %>
+<%= simple_form_for(
+[:admin, current_object],
+wrapper: :fit_form,
+html: { class: 'm-form m-form--fit m-form--label-align-right'}) do |f| %>
+
+<div class="m-portlet__body">
+  <%= f.input :name,
+  disable: true,
+  label: label_with_icon("名稱", "la la-users") %>
+  <%= f.input :icon,
+  collection: @icon_options,
+  input_html: {'class' => 'form-control  m-bootstrap-select m_selectpicker'},
+  label: label_with_icon("Icon", "flaticon-plus") %>
+  <%= f.input :position,
+  label: label_with_icon("順序", "flaticon-plus") %>
+  <div class="form-group m-form__group row">
+    <%= f.label :is_active, label_with_icon("啟用", "fa fa-unlock"), class: "col-lg-4 col-sm-12 string required" %>
+    <div class="col-lg-4 col-md-9 col-sm-12">
+      <label class="m-checkbox m-checkbox--bold m-checkbox--state-brand mt-2">
+        <%= f.input_field :is_active,
+        as: :boolean
+        %>
+        <span></span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<%= render partial: 'shared/submit', locals: { f: f, cancel_path: admin_channels_path } %>
+<% end %>

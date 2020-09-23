@@ -1,0 +1,10 @@
+zh-TW:
+  activerecord:
+    models:
+      channel: '頻道'
+    attributes:
+      channel:
+        name: '名稱'
+      channel/gender:
+        male: '男性'
+        female: '女性'

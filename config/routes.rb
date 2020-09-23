@@ -27,8 +27,24 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    resources :channels do
+      scope module: :channels do
+        resources :programs, only: [:index, :update, :create, :destroy] do
+          member do
+            put :suspend
+            put :recover
+          end
+          collection do
+            put :rearrange
+          end
+        end
+      end
+    end
+
     resources :tmp_files
   end
+
 
   resources :cities, only:[] do
     scope module: :cities do

@@ -36,6 +36,7 @@ class Admin::AppsController < ApplicationController
     @current_breadcrumb || {}
   end
 
+
   def root_path_on_identify
     path = case current_administrator.identity
            when 'news'
@@ -63,6 +64,10 @@ class Admin::AppsController < ApplicationController
 
   def current_item
     items.find { |item| item['link'] == current_index }
+  end
+
+  def add_breadcrumb_item item
+    breadcrumb_items << item
   end
 
 end

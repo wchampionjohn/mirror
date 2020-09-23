@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_17_063335) do
+ActiveRecord::Schema.define(version: 2020_09_22_084126) do
 
   create_table "ad_age_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "age_group_id"
@@ -109,6 +109,28 @@ ActiveRecord::Schema.define(version: 2020_09_17_063335) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "channel_age_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "age_group_id"
+    t.integer "channel_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["age_group_id"], name: "index_channel_age_groups_on_age_group_id"
+    t.index ["channel_id"], name: "index_channel_age_groups_on_channel_id"
+  end
+
+  create_table "channels", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "position"
+    t.string "icon"
+    t.boolean "is_active"
+    t.integer "gender", limit: 2
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["gender"], name: "index_channels_on_gender"
+    t.index ["is_active"], name: "index_channels_on_is_active"
+    t.index ["position"], name: "index_channels_on_position"
+  end
+
   create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "position"
@@ -136,6 +158,31 @@ ActiveRecord::Schema.define(version: 2020_09_17_063335) do
     t.integer "commission"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "program_age_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "age_group_id"
+    t.integer "program_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["age_group_id"], name: "index_program_age_groups_on_age_group_id"
+    t.index ["program_id"], name: "index_program_age_groups_on_program_id"
+  end
+
+  create_table "programs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "channel_id"
+    t.integer "seconds"
+    t.boolean "is_active"
+    t.string "video"
+    t.integer "position"
+    t.integer "gender", limit: 2
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["channel_id"], name: "index_programs_on_channel_id"
+    t.index ["gender"], name: "index_programs_on_gender"
+    t.index ["is_active"], name: "index_programs_on_is_active"
+    t.index ["position"], name: "index_programs_on_position"
   end
 
   create_table "slats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

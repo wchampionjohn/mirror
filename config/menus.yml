@@ -34,9 +34,9 @@ admin:
         icon: 'la	la-check-circle'
         link: '/admin/auditing_ads'
       -
-        name: '節目管理'
+        name: '頻道管理'
         icon: 'la la-television'
-        link: '/admin/devices'
+        link: '/admin/channels'
       -
         name: '報表'
         icon: 'la la-bar-chart'
