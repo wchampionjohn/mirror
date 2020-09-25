@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_22_084126) do
+ActiveRecord::Schema.define(version: 2020_09_23_033907) do
 
   create_table "ad_age_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "age_group_id"
@@ -169,6 +169,13 @@ ActiveRecord::Schema.define(version: 2020_09_22_084126) do
     t.index ["program_id"], name: "index_program_age_groups_on_program_id"
   end
 
+  create_table "program_screenshots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
+    t.integer "program_id"
+    t.datetime "created_at"
+    t.index ["program_id"], name: "index_program_screenshots_on_program_id"
+  end
+
   create_table "programs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "channel_id"
@@ -179,10 +186,12 @@ ActiveRecord::Schema.define(version: 2020_09_22_084126) do
     t.integer "gender", limit: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "screenshot_id"
     t.index ["channel_id"], name: "index_programs_on_channel_id"
     t.index ["gender"], name: "index_programs_on_gender"
     t.index ["is_active"], name: "index_programs_on_is_active"
     t.index ["position"], name: "index_programs_on_position"
+    t.index ["screenshot_id"], name: "index_programs_on_screenshot_id"
   end
 
   create_table "slats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

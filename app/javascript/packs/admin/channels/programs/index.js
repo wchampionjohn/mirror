@@ -30,11 +30,11 @@ new Vue({
 
       dz.on("success", function(file){
         var response  = $.parseJSON(file.xhr.response);
-        var uploadedProgram      = $.parseJSON(response.program);
+        var uploadedProgram = $.parseJSON(response.program);
 
         this.removeFile(file);
 
-        toastr.info('uploaded successfully', 'Info');
+        toastr.info('上傳完成', 'Info');
         self.programs.push(uploadedProgram);
       });
 
@@ -43,30 +43,6 @@ new Vue({
       });
 
     },
-    removeAttachment(id) {
-      let self = this;
-
-      swal({
-        title: 'Are you sure delete this file?',
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes',
-        cancelButtonText: 'No'
-      }).then(function (isConfirm) {
-
-        if (isConfirm.value) {
-          $.ajax({
-            type: "DELETE",
-            url: "/admin/channels/" + self.channedId + "/programs/" + id
-          }).done(function() {
-
-            self.programs = self.programs.filter(row => row.id !== id)
-            toastr.info('deleted successfully', 'Info');
-          })
-        }
-
-      })
-    },
     inactivePrograms(){
       return this.programs.filter(program => !program.is_active);
     },
@@ -74,7 +50,7 @@ new Vue({
       let self = this;
 
       swal({
-        title: 'Are you sure delete this program?',
+        title: '確定刪除此節目嗎?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Yes',
@@ -88,7 +64,7 @@ new Vue({
             url: "/admin/channels/" + self.channelId + "/programs/" + programId
           }).done(function() {
             self.programs = self.programs.filter(program => program.id != programId);
-            toastr.info('deleted successfully', 'Info');
+            toastr.info('節目已刪除', 'Info');
           }).fail(function(message) {
             console.log(message)
           })
@@ -100,7 +76,7 @@ new Vue({
       let self = this;
 
       swal({
-        title: 'Are you sure recover this program?',
+        title: '確定重新上架此節目嗎?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Yes',

@@ -10,4 +10,12 @@ class ProgramSerializer
     object.video.url
   end
 
+  attributes :screenshots do |object|
+    object.screenshots.map &:formated_attributes
+  end
+
+  attributes :current_screenshot do |object|
+    object.current_screenshot.try(:formated_attributes) || { url: '' }
+  end
+
 end

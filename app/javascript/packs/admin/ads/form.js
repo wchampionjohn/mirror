@@ -33,6 +33,7 @@ new Vue({
       dz.on("success", function(file){
         var response  = file.xhr.response;
         self.material = response;
+        this.removeFile(file);
         toastr.info('上傳成功', 'Info');
       });
 
@@ -52,6 +53,7 @@ new Vue({
       dz.on("success", function(file){
         var response  = file.xhr.response;
         self.banner = response;
+        this.removeFile(file);
         toastr.info('上傳成功', 'Info');
       });
 

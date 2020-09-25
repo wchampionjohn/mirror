@@ -25,7 +25,7 @@
                   <h5>
                     請拖曳檔案或點擊上傳
                   </h5>
-                  <h6>允許格式: MP4</h6>
+                  <p>允許格式: MP4 <br />檔案大小限制: 100MB</p>
                 </div>
               </div>
             </div>
@@ -47,7 +47,7 @@
         <div class="m-separator m-separator--dashed m-separator--lg"></div>
         <div class="m-form__heading">
           <h5 class="m-form__heading-title">
-            暫停中
+            已下架
           </h5>
         </div>
         <div class="m-portlet__body">
@@ -58,31 +58,37 @@
               <thead>
                 <tr>
                   <th width="35%">
-                    Name
+                    名稱
                   </th>
                   <th width="10%">
-                    Seconds
+                    秒數
                   </th>
                   <th width="10%">
-                    Extension
+                    預覽圖
                   </th>
                   <th width="25%">
-                    Update Time
+                    下架時間
                   </th>
                   <th width="15%">
-                    Actions
+                    操作
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="program in inactivePrograms()">
-                  <td v-html="program.name"></td>
+                  <td>
+                    <a :href="program.video_url" target="_blank">
+                      {{program.name}}
+                    </a>
+                  </td>
                   <td v-html="program.seconds"></td>
-                  <td v-html="program.extension"></td>
+                  <td>
+                    <img :src="program.current_screenshot.url" alt="100%x200" style="width: 96px; height: 54px;" v-if="program.current_screenshot" />
+                  </td>
                   <td v-html="program.updated_at"></td>
                   <td>
-                    <a href="javascript:void(0)" @click="recover(program.id)"><i class="la la-reply m--font-info"></i></a>
-                    <a href="javascript:void(0)" @click="destroy(program.id)"><i class="la la-remove m--font-info"></i></a>
+                    <a href="javascript:void(0)" class="btn btn-secondary m-btn btn-sm m-btn--icon m-btn--icon-only mt-2" @click="recover(program.id)"><i class="la la-reply"></i></a>
+                    <a href="javascript:void(0)" class="btn btn-secondary m-btn btn-sm m-btn--icon m-btn--icon-only mt-2"@click="destroy(program.id)"><i class="la la-remove"></i></a>
                   </td>
                 </tr>
                 <tr v-if="inactivePrograms().length == 0">
@@ -101,7 +107,7 @@
       <div class="row m--align-left">
         <div class="col-lg-8">
           <%= link_to(admin_channels_path, class: 'btn btn-info') do %>
-            <i class="la la-angle-left"></i> Back
+            <i class="la la-angle-left"></i> 上一頁
           <% end %>
         </div>
       </div>

@@ -75,11 +75,21 @@ class Admin::Channels::ProgramsController < Admin::AppsController
     render json: {}, status: :ok
   end
 
+  def screenshot
+    program = Program.find(params[:id])
+    screenshot = program.screenshots.build image: params[:file]
+
+    screenshot.save
+    program.update_column :screenshot_id, screenshot.id
+
+    render json: screenshot.formated_attributes, status: :ok
+  end
+
   private
   def program_params
     @program ||= ActionController::Parameters.new(
       JSON.parse(request.body.read).symbolize_keys
-    ).permit(:name, :seconds)
+    ).permit(:name, :seconds, :screenshot_id, screenshot_ids: [])
   end
 
   def rearranged_params

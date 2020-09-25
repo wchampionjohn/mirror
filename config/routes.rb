@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       scope module: :channels do
         resources :programs, only: [:index, :update, :create, :destroy] do
           member do
+            post :screenshot
             put :suspend
             put :recover
           end

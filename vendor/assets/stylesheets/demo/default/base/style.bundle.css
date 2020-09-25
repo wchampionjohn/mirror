@@ -21885,8 +21885,7 @@ body.m-portlet--fullscreen {
     width: 150px; }
 
 .form-control[readonly], .form-control {
-  border-color: #ebedf2;
-  color: #e51572; }
+  border-color: #ebedf2; }
   .form-control[readonly]::-moz-placeholder, .form-control::-moz-placeholder {
     color: #9699a2;
     opacity: 1; }

@@ -53,7 +53,6 @@ class Store < ApplicationRecord
   def vaild_commision
     headquarter.present? ? headquarter.commission : commission
   end
-
   # protected instance methods ................................................
   # private instance methods ..................................................
 end
