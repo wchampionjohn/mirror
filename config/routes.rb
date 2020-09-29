@@ -7,6 +7,13 @@ Rails.application.routes.draw do
             member do
             end
           end
+
+          resources :channels, only: [:show] do
+            scope module: :channels do
+              resources :programs, only: [:index]
+            end
+          end
+
         end
     end
   end

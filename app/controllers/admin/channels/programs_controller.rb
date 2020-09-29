@@ -19,6 +19,7 @@ class Admin::Channels::ProgramsController < Admin::AppsController
 
     program = channel.programs.build(
       video: params[:file],
+      video_md5: Digest::MD5.hexdigest(params[:file].read),
       name: base_filename
     )
 
