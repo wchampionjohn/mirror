@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :api do
+    namespace :v1 do
+        resources :devices, only: [:show], param: :key do
+          scope module: :devices do
+            member do
+            end
+          end
+        end
+    end
+  end
+
   namespace :admin do
     root 'admin/index#index'
     resources :devices
@@ -44,6 +55,7 @@ Rails.application.routes.draw do
     end
 
     resources :tmp_files
+    resources :global_settings, only: [:index, :edit, :update]
   end
 
 

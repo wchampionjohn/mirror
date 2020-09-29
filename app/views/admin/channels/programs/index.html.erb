@@ -87,8 +87,12 @@
                   </td>
                   <td v-html="program.updated_at"></td>
                   <td>
-                    <a href="javascript:void(0)" class="btn btn-secondary m-btn btn-sm m-btn--icon m-btn--icon-only mt-2" @click="recover(program.id)"><i class="la la-reply"></i></a>
-                    <a href="javascript:void(0)" class="btn btn-secondary m-btn btn-sm m-btn--icon m-btn--icon-only mt-2"@click="destroy(program.id)"><i class="la la-remove"></i></a>
+                    <button class="btn btn-secondary m-btn btn-sm m-btn--icon m-btn--icon-only mt-2" @click="recover(program.id)">
+                      <i class="la la-reply"></i>
+                    </button>
+                    <button class="btn btn-secondary m-btn btn-sm m-btn--icon m-btn--icon-only mt-2"@click="destroy(program.id)">
+                      <i class="la la-remove"></i>
+                    </button>
                   </td>
                 </tr>
                 <tr v-if="inactivePrograms().length == 0">

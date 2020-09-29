@@ -35,12 +35,12 @@
       </td>
       <td>
         <template>
-          <a href="javascript:void(0)" class="btn btn-secondary m-btn btn-sm m-btn--icon m-btn--icon-only mt-2" @click="edit(program)">
-            <i class="la la-pencil"  data-placement="left" data-toggle="modal" data-target="#m_modal" ></i>
-          </a>
-          <a href="javascript:void(0)" class="btn btn-secondary m-btn btn-sm m-btn--icon m-btn--icon-only mt-2" @click="suspend(program.id)">
+          <button class="btn btn-secondary m-btn btn-sm m-btn--icon m-btn--icon-only mt-2" @click="edit(program)" data-toggle="modal" data-target="#m_modal">
+            <i class="la la-pencil"  data-placement="left"></i>
+          </button>
+          <button class="btn btn-secondary m-btn btn-sm m-btn--icon m-btn--icon-only mt-2" @click="suspend(program.id)">
             <i class="la la-pause"></i>
-          </a>
+          </button>
         </template>
       </td>
     </tr>

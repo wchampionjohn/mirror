@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_23_033907) do
+ActiveRecord::Schema.define(version: 2020_09_29_060602) do
 
   create_table "ad_age_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "age_group_id"
@@ -149,7 +149,16 @@ ActiveRecord::Schema.define(version: 2020_09_23_033907) do
     t.datetime "last_report_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "sn"
+    t.string "version"
     t.index ["store_id"], name: "index_devices_on_store_id"
+  end
+
+  create_table "global_settings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "program_length"
+    t.integer "lowest_ads_amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "headquarters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -218,6 +227,7 @@ ActiveRecord::Schema.define(version: 2020_09_23_033907) do
     t.string "attachment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "md5"
     t.index ["store_id"], name: "index_store_introductions_on_store_id"
   end
 

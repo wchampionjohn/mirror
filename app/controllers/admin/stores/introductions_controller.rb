@@ -18,6 +18,7 @@ class Admin::Stores::IntroductionsController < ApplicationController
     introduction = Store::Introduction.new(
       store: Store.find(params[:store_id]),
       attachment: params[:file],
+      md5: Digest::MD5.hexdigest(params[:file].read),
       menu_type: params[:type]
     )
 

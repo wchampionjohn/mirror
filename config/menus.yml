@@ -38,6 +38,10 @@ admin:
         icon: 'la la-television'
         link: '/admin/channels'
       -
+        name: '全域設定'
+        icon: 'la la-television'
+        link: '/admin/global_settings'
+      -
         name: '報表'
         icon: 'la la-bar-chart'
         link: 'javascript:viod(0)'

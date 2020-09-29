@@ -6,7 +6,7 @@ class Admin::Channels::ProgramsController < Admin::AppsController
     @current_breadcrumb = { 'name' => '節目', 'link' => admin_channel_programs_path(params[:channel_id]) }
     channel = Channel.find params[:channel_id]
     @channel = channel
-    @programs = ProgramSerializer.new(channel.programs.order(:position))
+    @programs = ProgramSerializer.new(channel.programs.includes(:screenshots).order(:position))
       .serializable_hash[:data]
       .map { |hash| hash[:attributes] }
   end

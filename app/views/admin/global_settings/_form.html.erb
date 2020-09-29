@@ -1,0 +1,15 @@
+<%= render partial: 'shared/form_caption', locals: { title:  "全域設定" } %>
+<%= simple_form_for(
+[:admin, current_object],
+wrapper: :fit_form,
+html: { class: 'm-form m-form--fit m-form--label-align-right'}) do |f| %>
+
+<div class="m-portlet__body">
+  <%= f.input :program_length,
+  label: label_with_icon("節目長度", "la la-users") %>
+  <%= f.input :lowest_ads_amount,
+  label: label_with_icon("廣告最低數量", "flaticon-plus") %>
+</div>
+
+<%= render partial: 'shared/submit', locals: { f: f, cancel_path: admin_ads_path } %>
+<% end %>

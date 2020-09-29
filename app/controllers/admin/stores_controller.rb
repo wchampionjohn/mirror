@@ -43,7 +43,7 @@ class Admin::StoresController < Admin::AppsController
     [
      :name, :address, :area_id, :city_id, :headquarter_id, :commission,
      :contact_phone_number, :contact_name, :email, :gender,
-     :turn_on_service_menu, :turn_on_information_menu,
+     :is_service_menu_on, :is_information_menu_on,
      :service_menu_alias, :service_menu_icon,
      :information_menu_alias, :information_menu_icon,
      business_hours_attributes: [

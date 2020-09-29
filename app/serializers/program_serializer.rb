@@ -15,7 +15,13 @@ class ProgramSerializer
   end
 
   attributes :current_screenshot do |object|
-    object.current_screenshot.try(:formated_attributes) || { url: '' }
+    current_screenshot = object.screenshots.find { |screenshot| screenshot.id == object.screenshot_id }
+
+    if current_screenshot
+      current_screenshot.formated_attributes
+    else
+    { id: nil, url: '' }
+    end
   end
 
 end

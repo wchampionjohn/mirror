@@ -31,6 +31,9 @@ class Store < ApplicationRecord
 
   ICONS = Settings.icons
 
+  DEFAULT_INFORMATION_MENU_NAME = '店家資訊'
+  DEFAULT_SERVICE_MENU_NAME = '服務項目'
+
   accepts_nested_attributes_for :business_hours
   # class methods .............................................................
   # public instance methods ...................................................
@@ -52,6 +55,22 @@ class Store < ApplicationRecord
 
   def vaild_commision
     headquarter.present? ? headquarter.commission : commission
+  end
+
+  def information_menu_name
+    self.information_menu_alias.blank? ? DEFAULT_INFORMATION_MENU_NAME : self.information_menu_alias
+  end
+
+  def service_menu_name
+    self.service_menu_alias.blank? ? DEFAULT_SERVICE_MENU_NAME : self.service_menu_alias
+  end
+
+  def images_of_information
+    introductions.information.map &:formated_api
+  end
+
+  def images_of_service
+    introductions.services.map &:formated_api
   end
   # protected instance methods ................................................
   # private instance methods ..................................................

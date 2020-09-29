@@ -12,11 +12,19 @@ class Store::BusinessHour < ApplicationRecord
     self.end_time   = end_time.to_time
   end
   # scopes ....................................................................
+  scope :openness, -> { where(is_openness: true) }
   # additional config .........................................................
   enum day: [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
   # class methods .............................................................
 
   # public instance methods ...................................................
+  def period
+    {
+      day: self.day,
+      boot: self.start_time.strftime("%T"),
+      shutdown: self.end_time.strftime("%T"),
+    }
+  end
   # protected instance methods ................................................
   # private instance methods ..................................................
   #
