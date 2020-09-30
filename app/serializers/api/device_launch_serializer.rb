@@ -1,9 +1,12 @@
 module Api
   class DeviceLaunchSerializer
     include FastJsonapi::ObjectSerializer
-    attributes :id, :name, :mac, :sn, :version, :test_mode
+    attributes :id, :name, :mac, :sn, :test_mode
     attributes :store_id, :store_name
 
+    attributes :version do |object|
+      object.app_version.try :number
+    end
 
     attributes :program_length do
       GlobalSetting.current.program_length

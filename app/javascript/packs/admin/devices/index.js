@@ -10,8 +10,12 @@ new Vue({
       'id:ID',
       'name:設備名稱',
       'mac:MAC',
+      'last_report_time:狀態',
     ],
-    sortingColumns: ['id', 'name'],
+    cellHelperDecorators:{
+      last_report_time: 'serviceLight',
+    },
+    sortingColumns: ['id', 'name', 'last_report_time' ],
     searchPlaceholder: ['name'],
     ajaxUrl: '',
   },

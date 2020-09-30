@@ -27,7 +27,7 @@ export default {
 
       return '<span class="m-badge ' + style + ' m-badge--wide">' + source.status_text + '</span>';
     },
-    service_light: function(source){
+    serviceLight: function(source){
 
       let style = ''
       let minutes = source.out_of_service_minutes

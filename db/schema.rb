@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_081642) do
+ActiveRecord::Schema.define(version: 2020_09_29_095434) do
 
   create_table "ad_age_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "age_group_id"
@@ -139,6 +139,13 @@ ActiveRecord::Schema.define(version: 2020_09_29_081642) do
     t.boolean "available"
   end
 
+  create_table "device_app_versions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "number"
+    t.text "note"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "devices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "mac"
@@ -150,6 +157,9 @@ ActiveRecord::Schema.define(version: 2020_09_29_081642) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "sn"
+    t.string "version"
+    t.integer "app_version_id"
+    t.index ["app_version_id"], name: "index_devices_on_app_version_id"
     t.index ["store_id"], name: "index_devices_on_store_id"
   end
 

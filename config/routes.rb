@@ -5,6 +5,8 @@ Rails.application.routes.draw do
         resources :devices, only: [:show], param: :key do
           scope module: :devices do
             member do
+              resources :touch, only: [:create]
+              resources :version, only: [:create]
             end
           end
 
