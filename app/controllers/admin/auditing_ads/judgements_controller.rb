@@ -8,7 +8,7 @@ class Admin::AuditingAds::JudgementsController < Admin::AppsController
       #message = current_admin.ad_notification_message(ad, :approve)
       #Ad::NotificationJob.perform_now(message)
     rescue ::AASM::InvalidTransition => e
-      flash_message = { alert: ad.error_reason.join(', ') }
+      flash_message = { alert: '無法審核' }
     else
       flash_message = { success: '已通過審核 !' }
     end

@@ -17,7 +17,7 @@ module Ad::StateValidator
   end
 
   def budget_enough?
-    budget > 0
+    budget >= 0
   end
 
 end

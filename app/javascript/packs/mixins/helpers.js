@@ -12,13 +12,13 @@ export default {
           style = "m-badge--success"
           break;
         case 'rejection':
-          style = "m-badge--default"
-          break;
-        case 'stopping':
           style = "m-badge--danger"
           break;
-        case 'ending':
+        case 'stopping':
           style = "m-badge--metal"
+          break;
+        case 'ending':
+          style = "m-badge--default"
           break;
         case 'waiting':
           style = "m-badge--warning"
@@ -33,9 +33,10 @@ export default {
       let minutes = source.out_of_service_minutes
       let tip = `設備最後回報時間：${source.last_report_time} (${source.last_report_time_words})`
 
-      if(minutes < 30) {
+      if(minutes < 10) {
         style = "m-badge--success"
-      } else if(minutes >= 30 && minutes < 60) {
+      } else if(minutes >= 10 && minutes < 60 * 24 * 3) // 3 days
+      {
         style = "m-badge--warning"
       } else {
         style = "m-badge--danger"

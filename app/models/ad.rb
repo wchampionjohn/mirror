@@ -11,13 +11,13 @@ class Ad < ApplicationRecord
   belongs_to :category
   belongs_to :category_item
   belongs_to :advertiser
-  belongs_to :slat, optional: true
+  #belongs_to :slat, optional: true
   has_many :ad_age_groups
   has_many :age_groups, through: :ad_age_groups
   # validations ...............................................................
   validates_presence_of :name, :seconds, :budget
   validates_presence_of :start_at, :end_at, unless: :reserve?
-  validates_presence_of :slat, if: :carousel_in_pending?
+  #validates_presence_of :slat, if: :carousel_in_pending?
   # callbacks .................................................................
   before_validation do
     if self.file_code

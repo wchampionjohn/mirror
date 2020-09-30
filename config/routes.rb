@@ -7,6 +7,7 @@ Rails.application.routes.draw do
             member do
               resources :touch, only: [:create]
               resources :version, only: [:create]
+              resources :ads, only: [:index]
             end
           end
 
